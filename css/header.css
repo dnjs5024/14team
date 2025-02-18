@@ -8,6 +8,7 @@
     height: 100px;
     padding-bottom: 8.751rem;
     z-index: 100;
+    background-color:rgba(136,143,115,1) ;
 }
 
 #mainlogo {
@@ -17,6 +18,7 @@
 #mainlogo > img {
     height: 50px;
     width: 100px;
+
 }
 
 #headernav {
