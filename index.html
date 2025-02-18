@@ -37,7 +37,7 @@
                         <a class="nav-link active" aria-current="page" href="#teamname">팀명</a>
                       </li>
                       <li class="nav-item header-nav-item">
-                        <a class="nav-link" href="#teamcard">팀원소개</a>
+                        <a class="nav-link" href="#cardlist">팀원소개</a>
                       </li>
                       <li class="nav-item header-nav-item">
                         <a class="nav-link" href="#teamgoal">팀 목표 & 약속 </a>
@@ -55,7 +55,7 @@
         <img src="img/team_name.png">
     </div>
     <!---->
-    <div class="teamcard row row-cols-1 row-cols-md-3 g-3">
+    <div id="cardlist" class="teamcard row row-cols-1 row-cols-md-3 g-3">
       <div class="col">
         <div class="card h-100">
           <img src="https://cdn-static.zep.us/static/assets/baked-avartar-images/5-592-31-348.png" class="card-img-top" alt="...">
@@ -150,8 +150,8 @@
 <!-- 방명록 -->
   <div id ="comment">
     <div id="commentinput">
-        <input type="text" class="form-control" placeholder="Username">
-        <textarea class="form-control"></textarea>
+        <input id="guestname" type="text" class="form-control" placeholder="Username">
+        <textarea id="guestcomment" class="form-control"></textarea>
         <button class="btn btn-outline-secondary" type="button" id="button-addon2">Button</button>
     </div>
     <div id="commentlist"> 
@@ -162,22 +162,7 @@
         </div>
     </div>
     <!--  페이징 -->
-    <nav aria-label="Page navigation example">
-        <ul class="pagination">
-          <li class="page-item">
-            <a class="page-link" href="#" aria-label="Previous">
-              <span aria-hidden="true">&laquo;</span>
-            </a>
-          </li>
-          <li class="page-item"><a class="page-link" href="#">1</a></li>
-          <li class="page-item"><a class="page-link" href="#">2</a></li>
-          <li class="page-item"><a class="page-link" href="#">3</a></li>
-          <li class="page-item">
-            <a class="page-link" href="#" aria-label="Next">
-              <span aria-hidden="true">&raquo;</span>
-            </a>
-          </li>
-        </ul>
+    <nav id="pagenav" aria-label="Page navigation example">
       </nav>
   </div>
 
@@ -202,7 +187,109 @@
     });
   });
 </script>
+<script type="module">
+  import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js';
+  import { getFirestore, collection, addDoc, getDocs } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js';
 
+  var gcmcnt = 0;
+  var pagenum = 0;
+  var pagesize = 0;
+  var gclist = [];
+
+  const firebaseConfig = {
+      apiKey: "AIzaSyArlooo4l3TQUli6iN6VwuqMULV3h2LWr0",
+      authDomain: "team-14-e12ea.firebaseapp.com",
+      projectId: "team-14-e12ea",
+      storageBucket: "team-14-e12ea.firebasestorage.app",
+      messagingSenderId: "237545674447",
+      appId: "1:237545674447:web:47af8db7ffc1f03c7289ba",
+      measurementId: "G-BLBBFK0BZH"
+  };
+
+
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
+  //방명록 가져옴옴
+  async function startApp() {
+      let cnt = 0;
+      let id = document.getElementById('commentlist');
+      let html = '';
+      html += '<div class="cmt-list">' ;
+      const guestBookSnapshot = await getDocs(collection(db, "guestBook"));
+      console.log("[guestBook 데이터 출력]");
+      guestBookSnapshot.forEach((doc) => {
+          const data = doc.data();
+          gclist.push(data);
+          let name = data.guest_name;
+          let text = data.guest_text;
+          if(cnt < 5){
+            html +=  '<div class="cmt-col"><span>'+ name +'</span><span>'+ text +'</span></div>';  
+          } 
+          cnt ++;
+          console.log(`이름: ${data.guest_name}, 메시지: ${data.guest_text}, 번호:${data.comment_number}`);
+      });
+      html += "</div>";
+      id.innerHTML = html;
+      gcmcnt = cnt;
+      pagesize = Math.ceil(gcmcnt/5);
+      console.log(pagesize);
+      setPageSize();
+      
+// 개인상세페이지 데이터 가져옴옴
+      const teamMateSnapshot = await getDocs(collection(db, "teamMate"));
+      console.log("[teamMate데이터 출력]");
+      teamMateSnapshot.forEach((doc) => {
+          const data = doc.data();
+          console.log(`이름: ${data.user_name}, MBTI: ${data.user_mbti}`);
+          console.log(`내용: ${data.user_text}`);
+          console.log(`이미지 소스: ${data.user_image_src}`);
+      });
+  }
+  function setPageSize(){
+    let html = '';
+    let id = document.getElementById('pagenav');
+    html += '<ul class="pagination"><li class="page-item"> <a class="page-link" href="#" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>';
+    for(var i = 1 ; i < pagesize + 1 ; i++){
+      html += '<li class="page-item"><a class="page-link" >'+ i +'</a></li>' ;
+    }
+    html += '<li class="page-item"><a class="page-link" href="#" aria-label="Next"><span aria-hidden="true">&raquo;</span></a></li>';
+    html += '</ul>';
+    id.innerHTML = html;
+  }
+
+  // 개수만큼 데이터 보여줌
+  function setComment(pagenum){
+    alert(pagenum + 1 +'페이지');
+    let id = document.getElementById('commentlist');
+    let html = '';
+    let startnum = 1 * pagenum;
+    let endnum = 5 * (pagenum + 1);
+    html += '<div class="cmt-list">' ;
+    console.log(html);
+    for(var i = startnum ; i < endnum ; i++){
+      console.log(i);
+       let data = gclist[i];
+       let name = data.guest_name;
+       let text = data.guest_text;
+       html +=  '<div class="cmt-col"><span>'+ name +'</span><span>'+ text +'</span></div>';   
+    }
+    id.innerHTML = html;
+    pagenum++;
+  }
+
+  // 파이어베이스에 데이터 넣어줌
+  async function insertComment(){
+    alert(1);
+    await addDoc(collection(db, "guestBook"), {
+          guest_name: document.getElementById('guestname'),
+          guest_text: document.getElementById('guestcomment'),
+          comment_number:"1"
+      });
+  }
+  document.getElementById("button-addon2").addEventListener("click",insertComment);
+  // 페이지 로드 시 함수 실행
+  window.addEventListener('onload', startApp());
+</script>
     
 </div>
 <script src="js/main.js">

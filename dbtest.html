@@ -24,10 +24,10 @@
             measurementId: "G-BLBBFK0BZH"
         };
 
-        const app = initializeApp(firebaseConfig);
-        const db = getFirestore(app);
+            const app = initializeApp(firebaseConfig);
+            const db = getFirestore(app);
 
-        async function startApp() {
+            async function startApp() {
             await addDoc(collection(db, "guestBook"), {
                 guest_name: "정승원",
                 guest_text: "안녕하세요",
