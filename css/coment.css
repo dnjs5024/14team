@@ -1,0 +1,31 @@
+#commentinput{
+    display: flex;
+    justify-content: space-around;
+
+}
+
+#commentinput > input {
+    flex-basis: 15%;
+}
+
+
+#commentinput > textarea {
+    flex-basis: 55%;
+}
+
+#comment{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cmt-col{
+    border-bottom: 1px;
+    border-bottom-style: inset;
+}
+.cmt-list > span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowarp;
+    -webkit-line-clamp: 1;
+}

@@ -1,17 +1,64 @@
-#teamcard{
-    width : 1500px;
-    margin: 20px auto 20px auto;
-    padding: 20px;
-    border-radius: 10px;
-  }
+.teamcard {
 
- firstn{
-    font-size: 2em;
-    font-weight: bold;
-  }
+  margin: 20px auto 20px auto;
+  padding: 20px;
+  border-radius: 10px;
+}
 
-  .togglebtn {
-    position: absolute;
-    right: 5px;
-    bottom: 5px;
-    }
+.firstn {
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.togglebtn {
+  position: absolute;
+  right: 5px;
+  bottom: 5px;
+}
+
+
+.detailimg {
+  width: 300px;
+  height: 300px;
+  border: 2px solid blue;
+  flex-shrink: 0;
+  border-radius: 10px;
+
+}
+
+.detailimg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.content {
+  flex-grow: 1;
+  max-height: 200px;
+  padding: 10px;
+  margin-left: 30px;
+}
+
+.collapse {
+  display: flex;
+  flex-direction: row;
+}
+
+.collapse-section .card-body {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 20px;
+}
+.content, .visit{
+  width : 100%;
+}
+
+.text{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  
+}
