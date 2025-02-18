@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Firestore GuestBook & TeamMate</title>
+</head>
+
+<body>
+    <h1>데이터 입출력 테스트 페이지</h1>
+
+    <script type="module">
+        import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js';
+        import { getFirestore, collection, addDoc, getDocs } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js';
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyArlooo4l3TQUli6iN6VwuqMULV3h2LWr0",
+            authDomain: "team-14-e12ea.firebaseapp.com",
+            projectId: "team-14-e12ea",
+            storageBucket: "team-14-e12ea.firebasestorage.app",
+            messagingSenderId: "237545674447",
+            appId: "1:237545674447:web:47af8db7ffc1f03c7289ba",
+            measurementId: "G-BLBBFK0BZH"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+
+        async function startApp() {
+            await addDoc(collection(db, "guestBook"), {
+                guest_name: "정승원",
+                guest_text: "안녕하세요",
+                comment_number:"1"
+            });
+
+            console.log("guestBook에 테스트 데이터 추가");
+
+            const guestBookSnapshot = await getDocs(collection(db, "guestBook"));
+            console.log("[guestBook 데이터 출력]");
+            guestBookSnapshot.forEach((doc) => {
+                const data = doc.data();
+                console.log(`이름: ${data.guest_name}, 메시지: ${data.guest_text}, 번호:${data.comment_number}`);
+            });
+
+            const teamMateSnapshot = await getDocs(collection(db, "teamMate"));
+            console.log("[teamMate데이터 출력]");
+            teamMateSnapshot.forEach((doc) => {
+                const data = doc.data();
+                console.log(`이름: ${data.user_name}, MBTI: ${data.user_mbti}`);
+                console.log(`내용: ${data.user_text}`);
+                console.log(`이미지 소스: ${data.user_image_src}`);
+            });
+        }
+
+        // 페이지 로드 시 함수 실행
+        window.addEventListener('load', startApp);
+    </script>
+</body>
+
+</html>

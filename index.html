@@ -18,6 +18,7 @@
     <link href="css/header.css" rel="stylesheet" type="text/css" />
     <link href="css/team_goal.css" rel="stylesheet" type="text/css"/>
     <link href="css/team_card.css" rel="stylesheet" type="text/css"/>
+    <link href="css/coment.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
     <!-- header -->
@@ -120,7 +121,39 @@
       </div>
     </div>
   </div>
-
+<!-- 방명록 -->
+  <div id ="comment">
+    <div id="commentinput">
+        <input type="text" class="form-control" placeholder="Username">
+        <textarea class="form-control"></textarea>
+        <button class="btn btn-outline-secondary" type="button" id="button-addon2">Button</button>
+    </div>
+    <div id="commentlist"> 
+        <div class="cmt-list">
+            <div class="cmt-col"><span>나원준   </span><span>안녕하세요</span></div>
+            <div class="cmt-col"><span>정승원   </span><span>안녕하세요</span></div>
+            <div class="cmt-col"><span>정은세   </span><span>안녕하세요</span></div>
+        </div>
+    </div>
+    <!--  페이징 -->
+    <nav aria-label="Page navigation example">
+        <ul class="pagination">
+          <li class="page-item">
+            <a class="page-link" href="#" aria-label="Previous">
+              <span aria-hidden="true">&laquo;</span>
+            </a>
+          </li>
+          <li class="page-item"><a class="page-link" href="#">1</a></li>
+          <li class="page-item"><a class="page-link" href="#">2</a></li>
+          <li class="page-item"><a class="page-link" href="#">3</a></li>
+          <li class="page-item">
+            <a class="page-link" href="#" aria-label="Next">
+              <span aria-hidden="true">&raquo;</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+  </div>
 
     
 <script>
