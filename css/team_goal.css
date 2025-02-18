@@ -1,0 +1,15 @@
+#teamgoal {
+  display: flex;
+  height: 100vh; 
+}
+
+.half:first-child {
+  background-color: #4CAF50;
+}
+.half:last-child {
+  background-color: #2196F3;
+}
+
+.half{
+  flex-basis:50%;
+}
