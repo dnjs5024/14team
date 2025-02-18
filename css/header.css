@@ -3,8 +3,10 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: fixed;
+    width: 100%;
     height: 100px;
-    
+    padding-bottom: 8.751rem;
 }
 
 #mainlogo {
@@ -23,3 +25,4 @@
 .header-nav-item{
 
 }
+
