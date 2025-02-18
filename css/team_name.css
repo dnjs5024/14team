@@ -1,10 +1,3 @@
-/* header css 부분 */
-#header {
-    width: 100%;
-    height: 10vh;
-    background-color: antiquewhite;
-
-}
 /* 팀명 css 부분 */
 #teamname > img {
     width: 100%;
