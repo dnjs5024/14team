@@ -9,3 +9,8 @@
     font-size: 2em;
     font-weight: bold;
   }
+  .togglebtn {
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+    }
