@@ -1,11 +1,15 @@
 #teamgoal {
   display: flex;
-  height: 50vh; 
-  background-color: green; 
+  height: 100vh; 
 }
 
-#teamgoal > img {
-  width: 50%;          
-  height: 100%;        
-  object-fit: cover;   
+.half:first-child {
+  background-color: #4CAF50;
+}
+.half:last-child {
+  background-color: #2196F3;
+}
+
+.half{
+  flex-basis:50%;
 }
