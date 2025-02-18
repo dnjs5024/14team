@@ -1,0 +1,11 @@
+#teamgoal {
+  display: flex;
+  height: 50vh; 
+  background-color: green; 
+}
+
+#teamgoal > img {
+  width: 50%;          
+  height: 100%;        
+  object-fit: cover;   
+}
