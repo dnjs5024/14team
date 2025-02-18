@@ -1,11 +1,11 @@
-#teamcard{
+.teamcard{
     width : 1500px;
     margin: 20px auto 20px auto;
     padding: 20px;
     border-radius: 10px;
   }
 
- firstn{
+ .firstn{
     font-size: 2em;
     font-weight: bold;
   }
