@@ -15,9 +15,16 @@
 
 #comment{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
 }
+
+.collapse-close-btn{
+    width:100%;
+    display:flex;
+    justify-content: flex-end;
+}
+
 
 .cmt-col{
     border-bottom: 1px;
