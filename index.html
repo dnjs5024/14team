@@ -126,6 +126,7 @@
             <div class="collapse-close-btn">
               <button type="button" class="btn-close closebtn" aria-label="Close"></button>
             </div>
+        <div>
           <div class="profile-container">
             <div class="detailimg"> <img src="https://i.namu.wiki/i/HWhAuNu7aytIyB8dqIMlgO5BUWgPwBLnlB06MKGVGySSjImt-4c99csoKsIxZXrhmWZ2FXMOZ5UOaay2c2Y2MXnzB31FucBoJokfUphCkR_uQTG32YGDw0kheUZ9iX6p42gcgf0LTncAPoiw2qFphQ.webp">
             </div>
@@ -140,17 +141,20 @@
             </div>
           </div>
             <div class="text">
-              <div id="comment">
-                <div class="mb-3">
+              <div id="comment" class="comment-input-container">
+                <div class="mb-3 name-input">
                   <label for="nameInput" class="form-label">name</label>
-                  <input type="name" class="form-control" id="nameInput" placeholder="이름을 입력해주세요.">
+                  <input type="text" class="form-control" id="nameInput" placeholder="이름을 입력해주세요.">
                 </div>
-                <div class="mb-3">
+                <div class="mb-3 comment-input">
                   <label for="commentInput" class="form-label">comment</label>
-                  <input type="댓글" class="form-control" id="commentInput" placeholder="내용을 입력해주세요.">
+                  <input type="text" class="form-control" id="commentInput" placeholder="내용을 입력해주세요.">
                 </div>
-                    <button class="btn btn-outline-secondary" type="button" id="button-addon2">등록</button>
+                <div>
+                  <button class="btn btn-outline-secondary" type="button" id="button-addon2">등록</button>
                 </div>
+            </div>
+              
                 <div id="commentlist"> 
                     <div class="cmt-list">
                         <div class="cmt-col"><span>나원준   </span><span>안녕하세요</span></div>
@@ -161,7 +165,7 @@
                 <!--  페이징 -->
                 <nav aria-label="Page navigation example">
                 <nav id="pagenav" aria-label="Page navigation example">
-                </nav>
+                </nav></div>
             </div>
           </div>
         </div>

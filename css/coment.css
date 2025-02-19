@@ -26,7 +26,8 @@
 }
 .profile-container {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
+    gap: 20px;
 }
 .cmt-col{
     border-bottom: 1px;
@@ -39,14 +40,17 @@
     -webkit-line-clamp: 1;
 }
 
-.mb-3 {
+
+.comment-input-container {
     display: flex;
+    align-items: flex-end; /* 아래쪽 정렬 */
+    gap: 10px;
 }
 
-.name-input {
-    flex-basis: 20%;
+.comment-input-container .name-input {
+    flex: 0 0 15%;
 }
 
-.comment-input {
-    flex-basis: 80%;
+.comment-input-container .comment-input {
+    flex: 0 0 75%;
 }
