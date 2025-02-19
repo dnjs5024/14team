@@ -12,5 +12,6 @@
 }
 
 .half{
+  margin-top: 50px;
   flex-basis:50%;
 }
