@@ -126,17 +126,28 @@
             <div class="collapse-close-btn">
               <button type="button" class="btn-close closebtn" aria-label="Close"></button>
             </div>
+          <div class="profile-container">
             <div class="detailimg"> <img src="https://i.namu.wiki/i/HWhAuNu7aytIyB8dqIMlgO5BUWgPwBLnlB06MKGVGySSjImt-4c99csoKsIxZXrhmWZ2FXMOZ5UOaay2c2Y2MXnzB31FucBoJokfUphCkR_uQTG32YGDw0kheUZ9iX6p42gcgf0LTncAPoiw2qFphQ.webp">
             </div>
+            <div class="user-info">
+              <div class="name-mbti">
+                  <p><strong>이름:</strong> <span>정승원원</span></p>
+                  <p><strong>MBTI:</strong> <span>INFP</span></p>
+              </div>
+              <div class="self-intro">
+                  <p>안녕하세요! 저는 스프링트랙 참여 중인 정승원입니다!</p>
+              </div>
+            </div>
+          </div>
             <div class="text">
               <div id="comment">
                 <div class="mb-3">
-                  <label for="exampleFormControlInput1" class="form-label">name</label>
-                  <input type="name" class="form-control" id="exampleFormControlInput1" placeholder="이름을 입력해주세요.">
+                  <label for="nameInput" class="form-label">name</label>
+                  <input type="name" class="form-control" id="nameInput" placeholder="이름을 입력해주세요.">
                 </div>
                 <div class="mb-3">
-                  <label for="exampleFormControlInput1" class="form-label">comment</label>
-                  <input type="댓글" class="form-control" id="exampleFormControlInput1" placeholder="내용을 입력해주세요.">
+                  <label for="commentInput" class="form-label">comment</label>
+                  <input type="댓글" class="form-control" id="commentInput" placeholder="내용을 입력해주세요.">
                 </div>
                     <button class="btn btn-outline-secondary" type="button" id="button-addon2">등록</button>
                 </div>
@@ -150,11 +161,11 @@
                 <!--  페이징 -->
                 <nav aria-label="Page navigation example">
                 <nav id="pagenav" aria-label="Page navigation example">
-                  </nav>
-              </div>
-              </div>
+                </nav>
             </div>
           </div>
+        </div>
+      </div>
       <div id="teamgoal">
         <div class="half">1</div>
         <div class="half">2</div>
@@ -182,12 +193,15 @@
     });
   </script>
   <script type="module">
+
+
     import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js';
     import { getFirestore, collection, addDoc, getDocs } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js';
 
     var gcmcnt = 0;
     var pagenum = 0;
     var pagesize = 0;
+    var pagecount = 3;
     var gclist = [];
 
     const firebaseConfig = {
@@ -216,7 +230,7 @@
         gclist.push(data);
         let name = data.guest_name;
         let text = data.guest_text;
-        if (cnt < 5) {
+        if (cnt < pagecount) {
           html += '<div class="cmt-col"><span>' + name + '</span><span>' + text + '</span></div>';
         }
         cnt++;
@@ -225,7 +239,7 @@
       html += "</div>";
       id.innerHTML = html;
       gcmcnt = cnt;
-      pagesize = Math.ceil(gcmcnt / 5);
+      pagesize = Math.ceil(gcmcnt / pagecount);
       console.log(pagesize);
       setPageSize();
 
@@ -242,33 +256,39 @@
     function setPageSize() {
       let html = '';
       let id = document.getElementById('pagenav');
-      html += '<ul class="pagination"><li class="page-item"> <a class="page-link" href="#" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>';
+      html += '<ul class="pagination"><li id="pgNum" class="page-item"> <a class="page-link"  aria-label="Previous"><<</a></li>';
       for (var i = 1; i < pagesize + 1; i++) {
-        html += '<li class="page-item"><a class="page-link" >' + i + '</a></li>';
+        html += '<li id="pgNum" class="page-item"><a class="page-link" >' + i + '</a></li>';
       }
-      html += '<li class="page-item"><a class="page-link" href="#" aria-label="Next"><span aria-hidden="true">&raquo;</span></a></li>';
+      html += '<li id="pgNum" class="page-item"><a class="page-link"  aria-label="Next">>></a></li>';
       html += '</ul>';
       id.innerHTML = html;
     }
 
     // 개수만큼 데이터 보여줌
     function setComment(pagenum) {
-      alert(pagenum + 1 + '페이지');
-      let id = document.getElementById('commentlist');
-      let html = '';
-      let startnum = 1 * pagenum;
-      let endnum = 5 * (pagenum + 1);
-      html += '<div class="cmt-list">';
-      console.log(html);
-      for (var i = startnum; i < endnum; i++) {
-        console.log(i);
-        let data = gclist[i];
-        let name = data.guest_name;
-        let text = data.guest_text;
-        html += '<div class="cmt-col"><span>' + name + '</span><span>' + text + '</span></div>';
+      if (pagenum == '<<') {
+          setComment(1); 
+      }else if(pagenum == '>>'){
+          setComment(pagesize);
+      } else {
+        let id = document.getElementById('commentlist');
+        let html = '';
+        let startnum = (pagecount * (pagenum - 1)) + 1;
+        let endnum = pagecount * (pagenum);
+        html += '<div class="cmt-list">';
+        console.log(html);
+        for (var i = startnum; i <= endnum; i++) {
+          console.log(i);
+          if (gclist[i] != null) {
+            let data = gclist[i];
+            let name = data.guest_name;
+            let text = data.guest_text;
+            html += '<div class="cmt-col"><span>' + name + '</span><span>' + text + '</span></div>';
+          }
+        }
+        id.innerHTML = html;
       }
-      id.innerHTML = html;
-      pagenum++;
     }
 
     // 파이어베이스에 데이터 넣어줌
@@ -281,8 +301,17 @@
       });
     }
     document.getElementById("button-addon2").addEventListener("click", insertComment);
+
+
     // 페이지 로드 시 함수 실행
-    window.addEventListener('onload', startApp());
+    window.addEventListener('load', startApp);
+
+    document.getElementById("pagenav").addEventListener("click", function (event) {
+      if (event.target.classList.contains("page-link")) {
+        setComment(event.target.text);
+      }
+    });
+
   </script>
 
 

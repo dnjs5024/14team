@@ -19,6 +19,9 @@
   
   transition: transform 0.2s ease-in-out; /
 }
+.mycard > img {
+  border-radius: 100px;
+}
 
 .mycard:hover {
   transform: scale(1.05); 
@@ -55,7 +58,7 @@
 .collapse-section .card-body {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   gap: 20px;
   padding: 20px;
 }

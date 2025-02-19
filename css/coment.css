@@ -24,8 +24,10 @@
     display:flex;
     justify-content: flex-end;
 }
-
-
+.profile-container {
+    display: flex;
+    align-items: center;
+}
 .cmt-col{
     border-bottom: 1px;
     border-bottom-style: inset;
@@ -35,4 +37,16 @@
     text-overflow: ellipsis;
     white-space: nowarp;
     -webkit-line-clamp: 1;
+}
+
+.mb-3 {
+    display: flex;
+}
+
+.name-input {
+    flex-basis: 20%;
+}
+
+.comment-input {
+    flex-basis: 80%;
 }
