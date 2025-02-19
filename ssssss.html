@@ -19,6 +19,7 @@
     <link href="css/team_goal.css" rel="stylesheet" type="text/css"/>
     <link href="css/team_card.css" rel="stylesheet" type="text/css" />
     <link href="css/coment.css" rel="stylesheet" type="text/css"/>
+    <link href="css/audio.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
     <!-- header -->
@@ -180,9 +181,41 @@
         </ul>
       </nav>
   </div>
+<!-- 오디오 플레이어 HTML -->
 
+<div class="bgm-wrap">
+	<div id="audio-player"></div>
+	<div id="youtube-player"></div>
+	<div class="audio-box" style="">
+		<div class="audio-title-wrap">
+			<span id="audio-title"> 제목</span>
+		</div>
+		<div class="audio-control-btn btn-play"><i class="fa fa-play"></i></div>
+		<div class="play-time start">00:00 </div>
+		<div class="play-progress-box">
+			<div class="play-progress-bar"></div>
+		</div>
+		<div class="play-time end"> 00:00 </div>
+		<div class="play-volume-box">
+			<div class="audio-control-btn btn-volume"><i class="fa fa-volume-up"></i></div>
+			<div class="play-volume-slider"></div>
+		</div>
+		<div class="text-play-click">※ 재생 버튼을 눌러야 배경음이 재생됩니다.</div>
+	</div>
+	<form method='post' id='bgm-upload' name='frmUpload' enctype='multipart/form-data' style="display: none">
+		<input class="bgm-file-upload" type="file" id="input-file-bgm" name="bgmfile" accept="audio/mp3, audio/ogg, audio/wav, audio/oga">
+	</form>
 
-
+	<div class="popup-audio-player" style="display: none">
+		<div class="audio-control-btn btn-play">
+			<i class="fa fa-play" style=""></i>
+		</div>
+	</div>
+</div>
+<iframe id="ytplayer" type="text/html" width="640" height="360"
+  src="https://www.youtube.com/embed/VXp2dCXYrvQ?autoplay=1&origin=http://example.com"
+  frameborder="0">
+</iframe>
     
 <script>
   $(document).ready(function () {
