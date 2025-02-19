@@ -22,7 +22,9 @@
     <link href="css/audio.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
-
+  <iframe id="ytplayer" type="text/html" width="640" height="360"
+  src="https://www.youtube.com/embed/M7lc1UVf-VE?autoplay=1&origin=http://example.com"
+  frameborder="0"></iframe>
        
     
 <!-- 오디오 플레이어 HTML -->
@@ -35,6 +37,7 @@
     <audio src="https://www.youtube.com/watch?v=VXp2dCXYrvQ" controls>
 
     </audio>
+    <button class="btn-play">버튼</button>
 <script>
 var player;
 function onYouTubeIframeAPIReady() {

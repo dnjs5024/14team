@@ -69,7 +69,7 @@
       <!-- 팀명 & 팀소개 -->
       <!---->
       <div id="cardlist" class="teamcard row row-cols-1 row-cols-md-3 g-3">
-        <div class="col ">
+        <div id="col-1" class="col">
           <div class="card h-100 mycard card-btn" role="button" data-bs-toggle="collapse" data-bs-target="#nwj">
             <img src="https://cdn-static.zep.us/static/assets/baked-avartar-images/5-592-31-348.png"
               class="card-img-top" alt="...">
@@ -84,7 +84,7 @@
             </div>
           </div>
         </div>
-        <div class="col">
+        <div id="col-2" class="col">
           <div class=" card h-100 mycard card-btn" role="button" data-bs-toggle="collapse" data-bs-target="#nwj">
             <img src="https://cdn-static.zep.us/static/assets/baked-avartar-images/1-13-63-61.png" class="card-img-top"
               alt="...">
@@ -96,7 +96,7 @@
             </div>
           </div>
         </div>
-        <div class="col">
+        <div id="col-3" class="col">
           <div class="card h-100 mycard card-btn" role="button" data-bs-toggle="collapse" data-bs-target="#nwj">
             <img src="https://cdn-static.zep.us/static/assets/baked-avartar-images/2-56-2-56.png" class="card-img-top"
               alt="...">
@@ -197,7 +197,7 @@
           <div>
             <div class="all">
               <div class="chartmotion" id="chartWrapper">
-                <canvas id="myChart"></canvas> 
+                <canvas id="myChart"></canvas>
               </div>
               <div class="details" id="detailsBox">
                 <button class="close-btn" onclick="closeDetails()">X</button>
@@ -207,13 +207,13 @@
             </div>
           </div>
         </div>
-        
+
         <script src="js/mychart.js" defer></script>
-        
-          </div>
-        </div>
+
       </div>
     </div>
+  </div>
+  </div>
   </div>
 
 
@@ -357,14 +357,9 @@
         setComment(event.target.text);
       }
     });
-    
-
   </script>
-
-
   <script src="js/main.js">
   </script>
-
 </body>
 
 </html>
