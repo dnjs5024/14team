@@ -123,31 +123,43 @@
       <div class="collapse-section">
         <div class="collapse" id="nwj">
           <div class="card card-body">
-            <button type="button" class="btn-close closebtn" aria-label="Close"></button>
-            <div class="detailimg"> <img
-                src="https://i.namu.wiki/i/HWhAuNu7aytIyB8dqIMlgO5BUWgPwBLnlB06MKGVGySSjImt-4c99csoKsIxZXrhmWZ2FXMOZ5UOaay2c2Y2MXnzB31FucBoJokfUphCkR_uQTG32YGDw0kheUZ9iX6p42gcgf0LTncAPoiw2qFphQ.webp">
+            <div class="collapse-close-btn">
+              <button type="button" class="btn-close closebtn" aria-label="Close"></button>
             </div>
+          <div class="profile-container">
+            <div class="detailimg"> <img src="https://i.namu.wiki/i/HWhAuNu7aytIyB8dqIMlgO5BUWgPwBLnlB06MKGVGySSjImt-4c99csoKsIxZXrhmWZ2FXMOZ5UOaay2c2Y2MXnzB31FucBoJokfUphCkR_uQTG32YGDw0kheUZ9iX6p42gcgf0LTncAPoiw2qFphQ.webp">
+            </div>
+            <div class="user-info">
+              <div class="name-mbti">
+                  <p><strong>이름:</strong> <span>정승원원</span></p>
+                  <p><strong>MBTI:</strong> <span>INFP</span></p>
+              </div>
+              <div class="self-intro">
+                  <p>안녕하세요! 저는 스프링트랙 참여 중인 정승원입니다!</p>
+              </div>
+            </div>
+          </div>
             <div class="text">
               <div id="comment">
                 <div class="mb-3">
-                  <label for="exampleFormControlInput1" class="form-label">name</label>
-                  <input type="name" class="form-control" id="exampleFormControlInput1" placeholder="이름을 입력해주세요.">
+                  <label for="nameInput" class="form-label">name</label>
+                  <input type="name" class="form-control" id="nameInput" placeholder="이름을 입력해주세요.">
                 </div>
                 <div class="mb-3">
-                  <label for="exampleFormControlTextarea1" class="form-label">comment</label>
-                  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                  <label for="commentInput" class="form-label">comment</label>
+                  <input type="댓글" class="form-control" id="commentInput" placeholder="내용을 입력해주세요.">
                 </div>
-                <button class="btn btn-outline-secondary" type="button" id="button-addon2">Button</button>
-              </div>
-              <div id="commentlist">
-                <div class="cmt-list">
-                  <div class="cmt-col"><span>나원준 </span><span>안녕하세요</span></div>
-                  <div class="cmt-col"><span>정승원 </span><span>안녕하세요</span></div>
-                  <div class="cmt-col"><span>정은세 </span><span>안녕하세요</span></div>
+                    <button class="btn btn-outline-secondary" type="button" id="button-addon2">등록</button>
                 </div>
-              </div>
-              <!--  페이징 -->
-              <nav aria-label="Page navigation example">
+                <div id="commentlist"> 
+                    <div class="cmt-list">
+                        <div class="cmt-col"><span>나원준   </span><span>안녕하세요</span></div>
+                        <div class="cmt-col"><span>정승원   </span><span>안녕하세요</span></div>
+                        <div class="cmt-col"><span>정은세   </span><span>안녕하세요</span></div>
+                    </div>
+                </div>
+                <!--  페이징 -->
+                <nav aria-label="Page navigation example">
                 <nav id="pagenav" aria-label="Page navigation example">
                 </nav>
             </div>
