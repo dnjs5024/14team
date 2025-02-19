@@ -54,3 +54,8 @@
 .comment-input-container .comment-input {
     flex: 0 0 75%;
 }
+
+.paging-part{
+    display:flex;
+    justify-content: center;
+}
