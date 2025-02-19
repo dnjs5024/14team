@@ -15,7 +15,14 @@
   right: 5px;
   bottom: 5px;
 }
+.mycard {
+  
+  transition: transform 0.2s ease-in-out; /
+}
 
+.mycard:hover {
+  transform: scale(1.05); 
+}
 
 .detailimg {
   width: 300px;
