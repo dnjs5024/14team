@@ -218,6 +218,21 @@
 </iframe>
     
 <script>
+      var player;
+function onYouTubeIframeAPIReady() {
+  player = new YT.Player('player', {
+    height: '390',
+    width: '640',
+    videoId: 'M7lc1UVf-VE',
+    playerVars: {
+      'playsinline': 1
+    },
+    events: {
+      'onReady': onPlayerReady,
+      'onStateChange': onPlayerStateChange
+    }
+  });
+}
   $(document).ready(function () {
     $(".togglebtn").click(function () {
       var target = $(this).data("target");
