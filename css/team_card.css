@@ -3,6 +3,10 @@
   margin: 120px 200px 120px 200px;
   padding: 20px;
   border-radius: 10px;
+  display:flex;
+  justify-content: center;
+  gap:20px;
+  flex-wrap: wrap;
 }
 
 .firstn {
@@ -16,8 +20,12 @@
   bottom: 5px;
 }
 .mycard {
-  
-  transition: transform 0.2s ease-in-out; /
+  position: relative;  
+  max-width: 100%;
+  aspect-ratio: 3/4;
+  transition: transform 0.2s ease-in-out; 
+  white-space: nowrap;
+  min-width: 120px
 }
 
 .mycard:hover {
@@ -70,3 +78,23 @@
   align-items: stretch;
   
 }
+
+@media (max-width: 1500px) {
+  .teamcard {
+    
+    gap:10px;
+  }
+  .mycard{
+    transform: scale(0.8);
+  }
+}
+
+  @media (max-width: 480px) {
+    .teamcard {
+      
+      gap:5px;
+    }
+    .mycard {
+      transform: scale(0.7);
+    }
+  }
