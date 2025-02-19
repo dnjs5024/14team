@@ -1,58 +1,124 @@
-<html lang="en"><head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <!-- jquery -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <!-- 부트스트랩 css 추가가 -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <!-- css -->
-    <link href="css/main.css" rel="stylesheet" type="text/css">
-    <link href="css/team_name.css" rel="stylesheet" type="text/css">
-    <link href="css/header.css" rel="stylesheet" type="text/css">
-    <link href="css/team_goal.css" rel="stylesheet" type="text/css">
-    <link href="css/team_card.css" rel="stylesheet" type="text/css">
-    <link href="css/coment.css" rel="stylesheet" type="text/css">
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- jquery -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+    integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <!-- 부트스트랩 css 추가가 -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+    integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+    crossorigin="anonymous"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <!-- css -->
+  <link href="css/main.css" rel="stylesheet" type="text/css">
+  <link href="css/team_name.css" rel="stylesheet" type="text/css">
+  <link href="css/header.css" rel="stylesheet" type="text/css">
+  <link href="css/team_goal.css" rel="stylesheet" type="text/css">
+  <link href="css/team_card.css" rel="stylesheet" type="text/css">
+  <link href="css/coment.css" rel="stylesheet" type="text/css">
 </head>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=East+Sea+Dokdo&family=Gowun+Dodum&family=IBM+Plex+Sans+KR&family=Kumar+One&family=Shadows+Into+Light&family=Sunflower:wght@300&display=swap');
-  </style>
+</style>
+
 <body>
-    <!-- header -->
-    <div id="header">
-        <!-- 메인로고 -->
-        <div id="mainlogo">
-            <img src="img/team_logo.png">
-        </div>
-        <!-- 헤더 메뉴 -->
-        <div id="headernav">
-            <nav class="navbar navbar-expand-lg">
-                <div class="container-fluid">
-                  <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav">
-                      <li class="nav-item header-nav-item">
-                        <a class="nav-link active" aria-current="page" href="#teamname">팀명</a>
-                      </li>
-                      <li class="nav-item header-nav-item">
-                        <a class="nav-link" href="#cardlist">팀원소개</a>
-                      </li>
-                      <li class="nav-item header-nav-item">
-                        <a class="nav-link" href="#teamgoal">팀 목표 &amp; 약속 </a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </nav>
-        </div>
+  <!-- header -->
+  <div id="header">
+    <!-- 메인로고 -->
+    <div id="mainlogo">
+      <img src="img/team_logo.png">
     </div>
-<!-- 모든 컨텐츠  -->
-<div id="container">
-    <!-- 팀명 & 팀소개 -->
+    <!-- 헤더 메뉴 -->
+    <div id="headernav">
+      <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item header-nav-item">
+                <a class="nav-link active" aria-current="page" href="#teamname">팀명</a>
+              </li>
+              <li class="nav-item header-nav-item">
+                <a class="nav-link" href="#cardlist">팀원소개</a>
+              </li>
+              <li class="nav-item header-nav-item">
+                <a class="nav-link" href="#teamgoal">팀 목표 &amp; 약속 </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </div>
+  <!-- 모든 컨텐츠  -->
+  <div id="container">
     <div id="teamname">
-        <img src="img/team_name.png">
+      <img src="img/team_name.png">
     </div>
+    <!-- 메인로고제외 컨텐츠 -->
+    <div id="contents">
+      <!-- 팀명 & 팀소개 -->
+      <!---->
+      <div id="cardlist" class="teamcard row row-cols-1 row-cols-md-3 g-3">
+        <div class="col">
+          <div class="card h-100">
+            <img src="https://cdn-static.zep.us/static/assets/baked-avartar-images/5-592-31-348.png"
+              class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title"><span class="firstn">나</span>원준</h5>
+              <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
+                content. This content is a little bit longer.</p>
+              <p class="d-inline-flex gap-1">
+                <button class=" togglebtn btn" type="button" data-bs-toggle="collapse" data-bs-target="#nwj"
+                  aria-expanded="false" aria-controls="nwj">
+                  자세히 보기 &gt;&gt;
+                </button>
+              </p>
+
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class=" card h-100">
+            <img src="https://cdn-static.zep.us/static/assets/baked-avartar-images/1-13-63-61.png" class="card-img-top"
+              alt="...">
+            <div class="card-body">
+              <h5 class="card-title"><span class="firstn">정</span>승원</h5>
+              <p class="card-text">This is a short card.</p>
+              <p class="d-inline-flex gap-1">
+                <button class=" togglebtn btn" type="button" data-bs-toggle="collapse" data-bs-target="#jsw"
+                  aria-expanded="false" aria-controls="jsw">
+                  자세히 보기 &gt;&gt;
+                </button>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100">
+            <img src="https://cdn-static.zep.us/static/assets/baked-avartar-images/2-56-2-56.png" class="card-img-top"
+              alt="...">
+            <div class="card-body">
+              <h5 class="card-title"><span class="firstn">정</span>은세</h5>
+              <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
+                content.</p>
+              <p class="d-inline-flex gap-1">
+                <button class=" togglebtn btn" type="button" data-bs-toggle="collapse" data-bs-target="#jes"
+                  aria-expanded="false" aria-controls="jes">
+                  자세히 보기 &gt;&gt;
+                </button>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
     <!---->
     <div id="cardlist" class="teamcard row row-cols-1 row-cols-md-3 g-3">
       <div class="col">
@@ -100,100 +166,104 @@
       </div>
     </div>
 
-    <div class="collapse-section">
-      <div class="collapse" id="nwj">
-        <div class="card card-body">
-          <button type="button" class="btn-close closebtn" aria-label="Close"></button>
-          <div class="detailimg"> <img src="https://i.namu.wiki/i/HWhAuNu7aytIyB8dqIMlgO5BUWgPwBLnlB06MKGVGySSjImt-4c99csoKsIxZXrhmWZ2FXMOZ5UOaay2c2Y2MXnzB31FucBoJokfUphCkR_uQTG32YGDw0kheUZ9iX6p42gcgf0LTncAPoiw2qFphQ.webp">
+      <div class="collapse-section">
+        <div class="collapse" id="nwj">
+          <div class="card card-body">
+            <button type="button" class="btn-close closebtn" aria-label="Close"></button>
+            <div class="detailimg"> <img
+                src="https://i.namu.wiki/i/HWhAuNu7aytIyB8dqIMlgO5BUWgPwBLnlB06MKGVGySSjImt-4c99csoKsIxZXrhmWZ2FXMOZ5UOaay2c2Y2MXnzB31FucBoJokfUphCkR_uQTG32YGDw0kheUZ9iX6p42gcgf0LTncAPoiw2qFphQ.webp">
+            </div>
+            <div class="text">
+              <div class="content"> 자기 소개 내용 ~..</div>
+              <div class="visit"> 방명록 ~~..
+              </div>
+            </div>
           </div>
-          <div class="text">
-            <div class="content"> 자기 소개 내용 ~..</div>
-            <div class="visit"> 방명록 ~~..
+        </div>
+        <div class="collapse" id="jsw">
+          <div class="card card-body">
+            <button type="button" class="btn-close closebtn" aria-label="Close"></button>
+            <div class="detailimg"> <img
+                src="https://i.namu.wiki/i/HWhAuNu7aytIyB8dqIMlgO5BUWgPwBLnlB06MKGVGySSjImt-4c99csoKsIxZXrhmWZ2FXMOZ5UOaay2c2Y2MXnzB31FucBoJokfUphCkR_uQTG32YGDw0kheUZ9iX6p42gcgf0LTncAPoiw2qFphQ.webp">
+            </div>
+            <div class="text">
+              <div class="content"> 자기 소개 내용 ~..</div>
+              <div class="visit"> 방명록 ~~..
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="collapse" id="jes">
+          <div class="card card-body">
+            <button type="button" class="btn-close closebtn" aria-label="Close"></button>
+            <div class="detailimg"> <img
+                src="https://i.namu.wiki/i/HWhAuNu7aytIyB8dqIMlgO5BUWgPwBLnlB06MKGVGySSjImt-4c99csoKsIxZXrhmWZ2FXMOZ5UOaay2c2Y2MXnzB31FucBoJokfUphCkR_uQTG32YGDw0kheUZ9iX6p42gcgf0LTncAPoiw2qFphQ.webp">
+            </div>
+            <div class="text">
+              <div class="content"> 자기 소개 내용 ~..</div>
+              <div class="visit"> 방명록 ~~..
+              </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="collapse" id="jsw">
-        <div class="card card-body">
-          <button type="button" class="btn-close closebtn" aria-label="Close"></button>
-          <div class="detailimg"> <img src="https://i.namu.wiki/i/HWhAuNu7aytIyB8dqIMlgO5BUWgPwBLnlB06MKGVGySSjImt-4c99csoKsIxZXrhmWZ2FXMOZ5UOaay2c2Y2MXnzB31FucBoJokfUphCkR_uQTG32YGDw0kheUZ9iX6p42gcgf0LTncAPoiw2qFphQ.webp">
-          </div>
-          <div class="text">
-            <div class="content"> 자기 소개 내용 ~..</div>
-            <div class="visit"> 방명록 ~~..
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="collapse" id="jes">
-        <div class="card card-body">
-          <button type="button" class="btn-close closebtn" aria-label="Close"></button>
-          <div class="detailimg"> <img src="https://i.namu.wiki/i/HWhAuNu7aytIyB8dqIMlgO5BUWgPwBLnlB06MKGVGySSjImt-4c99csoKsIxZXrhmWZ2FXMOZ5UOaay2c2Y2MXnzB31FucBoJokfUphCkR_uQTG32YGDw0kheUZ9iX6p42gcgf0LTncAPoiw2qFphQ.webp">
-          </div>
-          <div class="text">
-            <div class="content"> 자기 소개 내용 ~..</div>
-            <div class="visit"> 방명록 ~~..
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div id="teamgoal">
+      <div id="teamgoal">
         <div class="half">1</div>
         <div class="half">2</div>
+      </div>
     </div>
   </div>
-<!-- 방명록 -->
+  <!-- 방명록 -->
   <div id="comment">
     <div id="commentinput">
-        <input id="guestname" type="text" class="form-control" placeholder="Username">
-        <textarea id="guestcomment" class="form-control"></textarea>
-        <button class="btn btn-outline-secondary" type="button" id="button-addon2">Button</button>
+      <input id="guestname" type="text" class="form-control" placeholder="Username">
+      <textarea id="guestcomment" class="form-control"></textarea>
+      <button class="btn btn-outline-secondary" type="button" id="button-addon2">Button</button>
     </div>
-    <div id="commentlist"> 
-        <div class="cmt-list">
-            <div class="cmt-col"><span>나원준   </span><span>안녕하세요</span></div>
-            <div class="cmt-col"><span>정승원   </span><span>안녕하세요</span></div>
-            <div class="cmt-col"><span>정은세   </span><span>안녕하세요</span></div>
-        </div>
+    <div id="commentlist">
+      <div class="cmt-list">
+        <div class="cmt-col"><span>나원준 </span><span>안녕하세요</span></div>
+        <div class="cmt-col"><span>정승원 </span><span>안녕하세요</span></div>
+        <div class="cmt-col"><span>정은세 </span><span>안녕하세요</span></div>
+      </div>
     </div>
     <!--  페이징 -->
     <nav aria-label="Page navigation example">
-    <nav id="pagenav" aria-label="Page navigation example">
+      <nav id="pagenav" aria-label="Page navigation example">
       </nav>
   </div>
 
 
 
-    
-<script>
-  $(document).ready(function () {
-    $(".togglebtn").click(function () {
-      var target = $(this).data("target");
 
-      
-      $(".collapse").not(target).collapse("hide");
+  <script>
+    $(document).ready(function () {
+      $(".togglebtn").click(function () {
+        var target = $(this).data("target");
 
-      
-      $(target).collapse("toggle");
+
+        $(".collapse").not(target).collapse("hide");
+
+
+        $(target).collapse("toggle");
+      });
+
+
+      $(".closebtn").click(function () {
+        $(this).closest(".collapse").collapse("hide");
+      });
     });
+  </script>
+  <script type="module">
+    import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js';
+    import { getFirestore, collection, addDoc, getDocs } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js';
 
-    
-    $(".closebtn").click(function () {
-      $(this).closest(".collapse").collapse("hide");
-    });
-  });
-</script>
-<script type="module">
-  import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js';
-  import { getFirestore, collection, addDoc, getDocs } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js';
+    var gcmcnt = 0;
+    var pagenum = 0;
+    var pagesize = 0;
+    var gclist = [];
 
-  var gcmcnt = 0;
-  var pagenum = 0;
-  var pagesize = 0;
-  var gclist = [];
-
-  const firebaseConfig = {
+    const firebaseConfig = {
       apiKey: "AIzaSyArlooo4l3TQUli6iN6VwuqMULV3h2LWr0",
       authDomain: "team-14-e12ea.firebaseapp.com",
       projectId: "team-14-e12ea",
@@ -201,95 +271,97 @@
       messagingSenderId: "237545674447",
       appId: "1:237545674447:web:47af8db7ffc1f03c7289ba",
       measurementId: "G-BLBBFK0BZH"
-  };
+    };
 
 
-  const app = initializeApp(firebaseConfig);
-  const db = getFirestore(app);
-  //방명록 가져옴옴
-  async function startApp() {
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+    //방명록 가져옴옴
+    async function startApp() {
       let cnt = 0;
       let id = document.getElementById('commentlist');
       let html = '';
-      html += '<div class="cmt-list">' ;
+      html += '<div class="cmt-list">';
       const guestBookSnapshot = await getDocs(collection(db, "guestBook"));
       console.log("[guestBook 데이터 출력]");
       guestBookSnapshot.forEach((doc) => {
-          const data = doc.data();
-          gclist.push(data);
-          let name = data.guest_name;
-          let text = data.guest_text;
-          if(cnt < 5){
-            html +=  '<div class="cmt-col"><span>'+ name +'</span><span>'+ text +'</span></div>';  
-          } 
-          cnt ++;
-          console.log(`이름: ${data.guest_name}, 메시지: ${data.guest_text}, 번호:${data.comment_number}`);
+        const data = doc.data();
+        gclist.push(data);
+        let name = data.guest_name;
+        let text = data.guest_text;
+        if (cnt < 5) {
+          html += '<div class="cmt-col"><span>' + name + '</span><span>' + text + '</span></div>';
+        }
+        cnt++;
+        console.log(`이름: ${data.guest_name}, 메시지: ${data.guest_text}, 번호:${data.comment_number}`);
       });
       html += "</div>";
       id.innerHTML = html;
       gcmcnt = cnt;
-      pagesize = Math.ceil(gcmcnt/5);
+      pagesize = Math.ceil(gcmcnt / 5);
       console.log(pagesize);
       setPageSize();
-      
-// 개인상세페이지 데이터 가져옴옴
+
+      // 개인상세페이지 데이터 가져옴옴
       const teamMateSnapshot = await getDocs(collection(db, "teamMate"));
       console.log("[teamMate데이터 출력]");
       teamMateSnapshot.forEach((doc) => {
-          const data = doc.data();
-          console.log(`이름: ${data.user_name}, MBTI: ${data.user_mbti}`);
-          console.log(`내용: ${data.user_text}`);
-          console.log(`이미지 소스: ${data.user_image_src}`);
+        const data = doc.data();
+        console.log(`이름: ${data.user_name}, MBTI: ${data.user_mbti}`);
+        console.log(`내용: ${data.user_text}`);
+        console.log(`이미지 소스: ${data.user_image_src}`);
       });
-  }
-  function setPageSize(){
-    let html = '';
-    let id = document.getElementById('pagenav');
-    html += '<ul class="pagination"><li class="page-item"> <a class="page-link" href="#" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>';
-    for(var i = 1 ; i < pagesize + 1 ; i++){
-      html += '<li class="page-item"><a class="page-link" >'+ i +'</a></li>' ;
     }
-    html += '<li class="page-item"><a class="page-link" href="#" aria-label="Next"><span aria-hidden="true">&raquo;</span></a></li>';
-    html += '</ul>';
-    id.innerHTML = html;
-  }
-
-  // 개수만큼 데이터 보여줌
-  function setComment(pagenum){
-    alert(pagenum + 1 +'페이지');
-    let id = document.getElementById('commentlist');
-    let html = '';
-    let startnum = 1 * pagenum;
-    let endnum = 5 * (pagenum + 1);
-    html += '<div class="cmt-list">' ;
-    console.log(html);
-    for(var i = startnum ; i < endnum ; i++){
-      console.log(i);
-       let data = gclist[i];
-       let name = data.guest_name;
-       let text = data.guest_text;
-       html +=  '<div class="cmt-col"><span>'+ name +'</span><span>'+ text +'</span></div>';   
+    function setPageSize() {
+      let html = '';
+      let id = document.getElementById('pagenav');
+      html += '<ul class="pagination"><li class="page-item"> <a class="page-link" href="#" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>';
+      for (var i = 1; i < pagesize + 1; i++) {
+        html += '<li class="page-item"><a class="page-link" >' + i + '</a></li>';
+      }
+      html += '<li class="page-item"><a class="page-link" href="#" aria-label="Next"><span aria-hidden="true">&raquo;</span></a></li>';
+      html += '</ul>';
+      id.innerHTML = html;
     }
-    id.innerHTML = html;
-    pagenum++;
-  }
 
-  // 파이어베이스에 데이터 넣어줌
-  async function insertComment(){
-    alert(1);
-    await addDoc(collection(db, "guestBook"), {
-          guest_name: document.getElementById('guestname'),
-          guest_text: document.getElementById('guestcomment'),
-          comment_number:"1"
+    // 개수만큼 데이터 보여줌
+    function setComment(pagenum) {
+      alert(pagenum + 1 + '페이지');
+      let id = document.getElementById('commentlist');
+      let html = '';
+      let startnum = 1 * pagenum;
+      let endnum = 5 * (pagenum + 1);
+      html += '<div class="cmt-list">';
+      console.log(html);
+      for (var i = startnum; i < endnum; i++) {
+        console.log(i);
+        let data = gclist[i];
+        let name = data.guest_name;
+        let text = data.guest_text;
+        html += '<div class="cmt-col"><span>' + name + '</span><span>' + text + '</span></div>';
+      }
+      id.innerHTML = html;
+      pagenum++;
+    }
+
+    // 파이어베이스에 데이터 넣어줌
+    async function insertComment() {
+      alert(1);
+      await addDoc(collection(db, "guestBook"), {
+        guest_name: document.getElementById('guestname'),
+        guest_text: document.getElementById('guestcomment'),
+        comment_number: "1"
       });
-  }
-  document.getElementById("button-addon2").addEventListener("click",insertComment);
-  // 페이지 로드 시 함수 실행
-  window.addEventListener('onload', startApp());
-</script>
-    
+    }
+    document.getElementById("button-addon2").addEventListener("click", insertComment);
+    // 페이지 로드 시 함수 실행
+    window.addEventListener('onload', startApp());
+  </script>
 
-<script src="js/main.js">
-</script>
 
-</body></html>
+  <script src="js/main.js">
+  </script>
+
+</body>
+
+</html>
