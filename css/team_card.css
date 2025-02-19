@@ -19,9 +19,6 @@
   
   transition: transform 0.2s ease-in-out; /
 }
-.mycard > img {
-  border-radius: 100px;
-}
 
 .mycard:hover {
   transform: scale(1.05); 

@@ -67,7 +67,7 @@
       <!-- 팀명 & 팀소개 -->
       <!---->
       <div id="cardlist" class="teamcard row row-cols-1 row-cols-md-3 g-3">
-        <div class="col">
+        <div class="col ">
           <div class="card h-100 mycard">
             <img src="https://cdn-static.zep.us/static/assets/baked-avartar-images/5-592-31-348.png"
               class="card-img-top" alt="...">
@@ -154,31 +154,36 @@
           </div>
         </div>
       </div>
+      <!-- 팀 목표 약속 -->
       <div id="teamgoal">
-        <div class="half">1</div>
+        <div class="half">
+          <div id="carouselExample" class="carousel slide">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="https://cdn-static.zep.us/static/assets/baked-avartar-images/5-592-31-348.png" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="https://cdn-static.zep.us/static/assets/baked-avartar-images/1-13-63-61.png" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="https://cdn-static.zep.us/static/assets/baked-avartar-images/2-56-2-56.png" class="d-block w-100" alt="...">
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
         <div class="half">2</div>
       </div>
     </div>
   </div>
-  <!-- 방명록 -->
-  <div id="comment">
-    <div id="commentinput">
-      <input id="guestname" type="text" class="form-control" placeholder="Username">
-      <textarea id="guestcomment" class="form-control"></textarea>
-      <button class="btn btn-outline-secondary" type="button" id="button-addon2">Button</button>
-    </div>
-    <div id="commentlist">
-      <div class="cmt-list">
-        <div class="cmt-col"><span>나원준 </span><span>안녕하세요</span></div>
-        <div class="cmt-col"><span>정승원 </span><span>안녕하세요</span></div>
-        <div class="cmt-col"><span>정은세 </span><span>안녕하세요</span></div>
-      </div>
-    </div>
-    <!--  페이징 -->
-    <nav aria-label="Page navigation example">
-      <nav id="pagenav" aria-label="Page navigation example">
-      </nav>
-  </div>
+
 
 
 
