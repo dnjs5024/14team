@@ -59,3 +59,8 @@
     display:flex;
     justify-content: center;
 }
+
+#button-addon2{
+    border: 0;
+    background-color: transparent;
+}
