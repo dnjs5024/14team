@@ -41,5 +41,5 @@
     z-index: 10;
   }
 
-  .swiper-button-prev { left: -80px; }
-  .swiper-button-next { right: -150px; }
+  .swiper-button-prev { left: -10vw; }
+  .swiper-button-next { right: -18vw; }
