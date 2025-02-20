@@ -287,10 +287,12 @@
     import { getDocs } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
     import { updateDoc, deleteDoc, doc } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
     import { query, orderBy, where, limit } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
-
+    // 가져온 게시물 개수
     var gcmcnt = 0;
+
     var pagenum = 0;
     var pagesize = 0;
+    // 페이지에 보일 게시물 수
     var pagecount = 3;
     var gclist = [];
 
@@ -309,6 +311,7 @@
     const db = getFirestore(app);
     //방명록 가져옴옴
     async function getBook(id) {
+      gclist = [];
       let cnt = 0;
       console.log('id :' + id);
       let commentid = document.getElementById('commentlist');
@@ -332,7 +335,8 @@
       commentid.innerHTML = html;
       gcmcnt = cnt;
       pagesize = Math.ceil(gcmcnt / pagecount);
-      console.log(pagesize);
+      console.log('gclist :'+ gclist.toString() );
+      console.log('pagesize : ' + pagesize);
       setPageSize();
     }
     //개인상세페이지 데이터 주입
@@ -373,7 +377,7 @@
     function setPageSize() {
       let html = '';
       let id = document.getElementById('pagenav');
-      console.log(gcmcnt);
+      console.log('gcmcnt' + gcmcnt);
       if (gcmcnt != 0) {
         html += '<ul class="pagination"><li id="pgNum" class="page-item"> <a class="page-link"  aria-label="Previous"><<</a></li>';
         for (var i = 1; i < pagesize + 1; i++) {
@@ -403,7 +407,8 @@
             let data = gclist[i];
             let name = data.guest_name;
             let text = data.guest_text;
-            html += '<div class="cmt-col"><span>' + name + '</span><span>' + text + '</span></div>';
+            let guestbooknum =  data.comment_number;
+            html += '<div class="cmt-col"><span>' + guestbooknum + '</span> <span>' + name + '</span><span>' + text + '</span></div>';
           }
         }
         id.innerHTML = html;

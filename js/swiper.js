@@ -42,11 +42,10 @@ document.addEventListener("DOMContentLoaded", function () {
         let activeSlide = document.querySelector(".swiper-slide-active");
         if (activeSlide) {
           let userId = activeSlide.dataset.userId; 
-          
-
-          if (userId) {
-            getPersonal(userId);
-          } 
+          // 함정 뭡니까? 맴매 
+          // if (userId) {
+          //   getPersonal(userId);
+          // } 
         }
       }
     }
