@@ -1,3 +1,12 @@
+document.addEventListener("DOMContentLoaded", function () {
+  function updateCardState() {
+    document.querySelectorAll(".swiper-slide").forEach((slide) => {
+      slide.style.pointerEvents = slide.classList.contains("swiper-slide-active") 
+        ? "auto" 
+        : "none";
+    });
+  }
+
 var swiper = new Swiper(".swiper-container", {
   slidesPerView: 3, 
   centeredSlides: true, 
@@ -16,9 +25,13 @@ var swiper = new Swiper(".swiper-container", {
     
   },
   on: {
-    slideChange: function () {
-      console.log("Active slide index:", this.realIndex);
+    slideChangeTransitionEnd: function () { 
+      // ✅ 슬라이드 변경 후 '완전히' 끝나고 업데이트해야 함!
+      updateCardState();
     }
   }
 });
 
+// ✅ 페이지 로드 시 초기 활성화 카드만 클릭 가능하도록 설정
+updateCardState();
+});
