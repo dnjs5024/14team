@@ -1,0 +1,22 @@
+@font-face {
+    font-family: "vitrocore";
+    src: url("../fonts/vitrocore.ttf") format("truetype");
+    font-weight: normal; 
+}
+
+@font-face {
+    font-family: 'vitropride';
+    src: url('../fonts/vitropride.ttf') format("truetype");
+    font-weight: normal;
+}
+
+
+.card-title{
+    font-family: 'vitrocore' , sans-serif;
+    letter-spacing: .3em;
+}
+
+.collapse-section{
+    font-family: 'vitropride', serif;
+    letter-spacing: .1em;
+}
