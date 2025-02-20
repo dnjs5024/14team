@@ -333,7 +333,7 @@
         user_name.innerHTML = user_html1;
         user_mbti.innerHTML = user_html2;
         user_text.innerHTML = user_html3;
-        user_img.innerHTML = user_html4;
+        user_img.innerHTML = `<img src="${data.user_image_src}" alt="사용자 이미지">`;
         console.log(`이름: ${data.user_name}, MBTI: ${data.user_mbti}`);
         console.log(`내용: ${data.user_text}`);
         console.log(`이미지 소스: ${data.user_image_src}`);
