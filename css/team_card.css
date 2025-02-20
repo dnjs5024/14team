@@ -1,13 +1,19 @@
 .teamcard {
 
-  margin: 120px 200px 120px 200px;
-  padding: 20px;
+  
+  padding: 100px;
   border-radius: 10px;
   display:flex;
   justify-content: center;
+  align-items: center;
   gap:20px;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+  
+
+  
 }
+
+
 
 .firstn {
   font-size: 2em;
@@ -22,15 +28,20 @@
 .mycard {
   position: relative;  
   max-width: 100%;
+  width:calc(33.33%-20px);
   aspect-ratio: 3/4;
   transition: transform 0.2s ease-in-out; 
   white-space: nowrap;
-  min-width: 120px
+  min-width: 200px;
+  flex :1;
+  padding:20px;
+  margin: 0;
+  
+
+
 }
 
-.mycard:hover {
-  transform: scale(1.05); 
-}
+
 
 .detailimg {
   width: 300px;
@@ -79,22 +90,26 @@
   
 }
 
-@media (max-width: 1500px) {
+@media (max-width: 767px) {
+ 
   .teamcard {
-    
-    gap:10px;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 ;
   }
   .mycard{
-    transform: scale(0.8);
+    width: 100%;
   }
 }
 
-  @media (max-width: 480px) {
+  @media (max-width: 1024px) {
+    
     .teamcard {
       
-      gap:5px;
+      gap:10px;
+      padding : 0 50px;
     }
     .mycard {
-      transform: scale(0.7);
+      width:calc(50%-10px)
     }
   }
