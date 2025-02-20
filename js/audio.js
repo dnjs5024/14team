@@ -65,7 +65,7 @@ function getCurrentTitle() {
 function updateTitle() {
     let title = getCurrentTitle();
     console.log(title);
-    document.getElementById("songTitle").innerText =  title;
+    document.getElementById("songTitle").innerHTML =  '<span>' + title + '</span>';
 }
 
 function onPlayerStateChange(event) {

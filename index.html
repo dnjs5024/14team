@@ -223,13 +223,16 @@
   </div>
   <!-- 오디오  -->
   <div id="audio">
+    <img src="img/chillbody.png">
     <div id="player"></div>
       <div id="songTitle"></div>
-      <button onClick="previousVideo()"><img src="img/chillprev.png"></button>
-      <button onClick="startVideo()">시작</button>
-      <button onClick="pauseVideo()">정지</button>
-      <button onClick="stopVideo()">종료</button>
-      <button onClick="nextVideo()"><img src="img/chillnext.png"></button>
+      <div>
+        <button onClick="previousVideo()"><img class="audio-img" src="img/prev.png"></button>
+        <button onClick="pauseVideo()"><img class="audio-img" src="img/pause.png"></button>
+        <button onClick="startVideo()"><img class="audio-img" src="img/play.png"></button>
+        <button onClick="stopVideo()"><img class="audio-img" src="img/stop.png"></button>
+        <button onClick="nextVideo()"><img class="audio-img" src="img/next.png"></button>
+      </div>
     </div>
   </div>
 
