@@ -28,14 +28,14 @@ const data = {
             label: '정나단 결성 후',
             data: [100, 100, 100, 100, 100],
             fill: true,
-            backgroundColor: 'rgba(255, 99, 132, 0.2)',
-            borderColor: 'rgb(255, 99, 132)',
-            pointBackgroundColor: 'rgb(255, 99, 132)',
-            pointBorderColor: '#fff',
+            backgroundColor: 'rgba(255, 250, 161,0.5)',
+            borderColor: 'rgb(255,250,161)',
+            pointBackgroundColor: 'rgb(255, 250, 161)',
+            
             pointHoverBackgroundColor: '#fff',
             pointRadius : 10,
             pointHoverRadius: 12,
-            pointHoverBorderColor: 'rgb(255, 99, 132)'
+            pointHoverBorderColor: 'rgb(0, 0, 0)'
         }
     ]
 };
@@ -66,15 +66,36 @@ const myChart = new Chart(ctx, {
         },
         onClick: (event) => {
             const points = myChart.getElementsAtEventForMode(event, 'nearest', { intersect: true }, true);
-
             if (points.length > 0) {
                 const index = points[0].index;
                 const label = data.labels[index];
                 showDetails(label);
             }
+        },
+        scales: {  
+            r: {  
+                angleLines: {
+                    display: true, 
+                    color: 'rgba(53, 53, 53, 0)', 
+                    lineWidth: 2 
+                },
+                grid: {
+                    color: 'rgba(64, 64, 64, 0.7)',
+                    lineWidth: 1.5 
+                },
+                ticks: {
+                    backdropColor: "rgba(0, 0, 0, 0)", 
+                    color: "black", 
+                    font: {
+                        size: 14, 
+                        weight: "bold" 
+                    }
+                }
+            }
         }
     }
 });
+
 
 function showDetails(label) {
     const chartWrapper = document.getElementById("chartWrapper");
@@ -85,8 +106,8 @@ function showDetails(label) {
     detailTitle.textContent = label;
     detailContent.textContent = detailsData[label];
 
-    chartWrapper.style.transform = "translateX(-350px)";  // ⬅ 차트를 더 왼쪽으로
-    detailsBox.style.right = "-80px";  // 🔥 상세 내용을 더 오른쪽으로
+    chartWrapper.style.transform = "translateX(-350px)"; 
+    detailsBox.style.right = "-80px";  
     detailsBox.classList.add("active");
 }
 
