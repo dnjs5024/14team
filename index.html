@@ -443,7 +443,8 @@
         });
         document.getElementById('nameInput').value = '';
         document.getElementById('commentInput').value = '';
-        window.location.reload();
+        // window.location.reload();
+        getBook(id);
       } catch (error) {
         console.error("방명록 추가 중 오류 발생:", error);
         alert("방명록을 추가하는 중 오류가 발생했습니다.")
