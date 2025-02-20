@@ -26,6 +26,7 @@
   <link href="css/team_card.css" rel="stylesheet" type="text/css">
   <link href="css/coment.css" rel="stylesheet" type="text/css">
   <link href="css/mychart.css" rel="stylesheet" type="text/css">
+  <link href="css/audio.css" rel="stylesheet" type="text/css">
 </head>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=East+Sea+Dokdo&family=Gowun+Dodum&family=IBM+Plex+Sans+KR&family=Kumar+One&family=Shadows+Into+Light&family=Sunflower:wght@300&display=swap');
@@ -213,9 +214,11 @@
   </div>
   </div>
   <!-- 오디오  -->
-  <div id="player"></div>
-  <button onClick="startVideo()">시작</button>
-  <button onClick="stopVideo()">정지</button>
+  <div id="audio">
+    <div id="player"></div>
+      <button onClick="startVideo()">시작</button>
+      <button onClick="stopVideo()">정지</button>
+    </div>
   </div>
 
 
@@ -386,6 +389,15 @@
       if (event.target.classList.contains("page-link")) {
         setComment(event.target.text);
       }
+    });
+    document.getElementById("col-wj").addEventListener("click", function (event) {
+      console.log(event.currentTarget.id); 
+    });
+    document.getElementById("col-sw").addEventListener("click", function (event) {
+      console.log(event.currentTarget.id);
+    });
+    document.getElementById("col-es").addEventListener("click", function (event) {
+      console.log(event.currentTarget.id);
     });
   </script>
   <script src="js/audio.js">
