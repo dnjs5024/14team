@@ -22,6 +22,14 @@
     font-weight: normal;
 }
 
+@font-face {
+    font-family: 'dung';
+    src: url('../fonts/dung.ttf') format("truetype");
+    font-weight: normal;
+}
+
+
+
 
 
 .card-title{
@@ -43,4 +51,9 @@
     font-family: 'vitropride', serif;
     letter-spacing: .1em;
 
+}
+
+.nav-link{
+    font-family: 'dung', serif;
+    letter-spacing: .1em;
 }
