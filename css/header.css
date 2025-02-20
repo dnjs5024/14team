@@ -10,10 +10,7 @@
     z-index: 100;
     top:0;
     background-color: white;
-    padding:10px 0;
-    justify-content: center;
-   
-    
+    padding:10px 0;  
 }
 
 .nav-link.active {
@@ -23,13 +20,6 @@
   }
   
 
-.container-fluid{
-    width:400;
-}
-
-#spacemaker{
-    width:368px;
-}
 
 #mainlogo > img {
     height:75px;
@@ -45,17 +35,19 @@
     border-radius: 10px;
     background-color: transparent;
     font-family: "IBM Plex Sans KR", serif;
-    margin-right:32%
 }
 
 .header-nav-item{
 border-radius: 5px;
-
 background-color: transparent;
-
+margin-right: 84px;
+font-size: 1.5rem;
 }
 
 #teamname {
     background-color: rgba(136,143,115,1);
 }
 
+.ui_navbar-nav{
+
+}

@@ -30,8 +30,8 @@
   <link href="css/mychart.css" rel="stylesheet" type="text/css">
   <link href="css/swiper.css" rel="stylesheet" type="text/css">
   <link href="css/audio.css" rel="stylesheet" type="text/css">
-  <link href="css/clock.css" rel="stylesheet" type="text/css" >
-  <link href="css/text.css" rel="stylesheet" type="text/css" >
+  <link href="css/clock.css" rel="stylesheet" type="text/css">
+  <link href="css/text.css" rel="stylesheet" type="text/css">
 </head>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=East+Sea+Dokdo&family=Gowun+Dodum&family=IBM+Plex+Sans+KR&family=Kumar+One&family=Shadows+Into+Light&family=Sunflower:wght@300&display=swap');
@@ -41,30 +41,29 @@
   <!-- header -->
   <div id="header">
     <!-- 메인로고 -->
+    <div style="width: 20.5%;"></div>
     <div id="mainlogo">
       <img src="img/team_logo.png">
     </div>
-
+    <div style="width: 5.3%;"></div>
     <!-- 헤더 메뉴 -->
     <div id="headernav">
       <nav class="navbar navbar-expand-lg">
-        <div class="container-fluid">
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-              <li class="nav-item header-nav-item">
-                <a class="nav-link active" aria-current="page" href="#teamname">팀명</a>
-              </li>
-              <li class="nav-item header-nav-item">
-                <a class="nav-link active" href="#cardlist">팀원소개</a>
-              </li>
-              <li class="nav-item header-nav-item">
-                <a class="nav-link active" href="#teamprom">팀 약속 </a>
-              </li>
-              <li class="nav-item header-nav-item">
-                <a class="nav-link active" href="#teamgoal">팀 목표 </a>
-              </li>
-            </ul>
-          </div>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="ui_navbar-nav navbar-nav">
+            <li class="nav-item header-nav-item">
+              <a class="nav-link active" aria-current="page" href="#teamname">팀명</a>
+            </li>
+            <li class="nav-item header-nav-item">
+              <a class="nav-link active" href="#cardlist">팀원소개</a>
+            </li>
+            <li class="nav-item header-nav-item">
+              <a class="nav-link active" href="#teamprom">팀 약속 </a>
+            </li>
+            <li class="nav-item header-nav-item">
+              <a class="nav-link active" href="#teamgoal">팀 목표 </a>
+            </li>
+          </ul>
         </div>
       </nav>
     </div>
@@ -337,7 +336,7 @@
       setPageSize();
     }
     //개인상세페이지 데이터 주입
-    window.getPersonal = async function(id){
+    window.getPersonal = async function (id) {
       // 방명록 가져오기
       getBook(id);
       // 개인상세페이지 데이터 가져옴
@@ -439,7 +438,7 @@
         });
         document.getElementById('nameInput').value = '';
         document.getElementById('commentInput').value = '';
-         window.location.reload();
+        window.location.reload();
       } catch (error) {
         console.error("방명록 추가 중 오류 발생:", error);
         alert("방명록을 추가하는 중 오류가 발생했습니다.")
