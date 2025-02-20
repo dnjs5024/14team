@@ -54,7 +54,7 @@ const myChart = new Chart(ctx, {
                 display: true,
                 labels: {
                     font: {
-                        family: 'Verdana',
+                        family: 'gm',
                         size: 14,
                         weight: 'bold'
                     },
@@ -72,8 +72,15 @@ const myChart = new Chart(ctx, {
                 showDetails(label);
             }
         },
-        scales: {  
-            r: {  
+        scales: {
+             
+            r: {  pointLabels: {
+                font: {
+                    size: 16, 
+                    family: 'gm', 
+                    weight: 'bold'
+                }
+            },
                 angleLines: {
                     display: true, 
                     color: 'rgba(53, 53, 53, 0)', 
@@ -87,6 +94,7 @@ const myChart = new Chart(ctx, {
                     backdropColor: "rgba(0, 0, 0, 0)", 
                     color: "black", 
                     font: {
+                        family : 'gm',
                         size: 14, 
                         weight: "bold" 
                     }

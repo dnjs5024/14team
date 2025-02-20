@@ -10,6 +10,19 @@
     font-weight: normal;
 }
 
+@font-face {
+    font-family: 'vitroin';
+    src: url('../fonts/vitroin.ttf') format("truetype");
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'gm';
+    src: url('../fonts/gm.ttf') format("truetype");
+    font-weight: normal;
+}
+
+
 
 .card-title{
     font-family: 'vitrocore' , sans-serif;
@@ -19,4 +32,15 @@
 .collapse-section{
     font-family: 'vitropride', serif;
     letter-spacing: .1em;
+}
+
+#detailTitle {
+    font-family: 'vitroin', serif;
+    letter-spacing: .3em;
+}
+
+#detailContent{
+    font-family: 'vitropride', serif;
+    letter-spacing: .1em;
+
 }
