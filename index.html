@@ -126,15 +126,15 @@
             </div>
             <div>
               <div class="profile-container">
-                <div class="detailimg"> <img
+                <div id="personalprofile" class="detailimg"> <img
                     src="https://i.namu.wiki/i/HWhAuNu7aytIyB8dqIMlgO5BUWgPwBLnlB06MKGVGySSjImt-4c99csoKsIxZXrhmWZ2FXMOZ5UOaay2c2Y2MXnzB31FucBoJokfUphCkR_uQTG32YGDw0kheUZ9iX6p42gcgf0LTncAPoiw2qFphQ.webp">
                 </div>
                 <div class="user-info">
                   <div class="name-mbti">
-                    <p><strong>이름:</strong> <span>정승원</span></p>
-                    <p><strong>MBTI:</strong> <span>INFP</span></p>
+                    <p><strong>이름:</strong> <span id="personalname"></span></p>
+                    <p><strong>MBTI:</strong> <span id="personalmbti">INFP</span></p>
                   </div>
-                  <div class="self-intro">
+                  <div class="self-intro" id="personaltext">
                     <p>안녕하세요! 저는 스프링트랙 참여 중인 정승원입니다!</p>
                   </div>
                 </div>
@@ -258,8 +258,12 @@
   <script type="module">
 
 
-    import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js';
-    import { getFirestore, collection, addDoc, getDocs } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js';
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";
+        import { getFirestore } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
+        import { collection, addDoc } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
+        import { getDocs } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
+        import { updateDoc, deleteDoc, doc } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
+        import { query, where } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
 
     var gcmcnt = 0;
     var pagenum = 0;
@@ -305,12 +309,22 @@
       pagesize = Math.ceil(gcmcnt / pagecount);
       console.log(pagesize);
       setPageSize();
-
-      // 개인상세페이지 데이터 가져옴옴
-      const teamMateSnapshot = await getDocs(collection(db, "teamMate"));
+    }
+    //개인상세페이지 데이터 주입
+    async function getPersonal(id){
+      // 개인상세페이지 데이터 가져옴
+      let user_text = document.getElementById('personaltext');
+      let user_name = document.getElementById('personalname');
+      let user_mbti = document.getElementById('personalmbti');
+      let user_img = document.getElementById('personalprofile');
+      let user_html = '';
+      const q = query(collection(db, "teamMate"), where("user_id", "==", id));
+      const teamMateSnapshot = await getDocs(q);
       console.log("[teamMate데이터 출력]");
       teamMateSnapshot.forEach((doc) => {
         const data = doc.data();
+        user_html += '' + data.user_name;
+        user_name.innerHTML = user_html;
         console.log(`이름: ${data.user_name}, MBTI: ${data.user_mbti}`);
         console.log(`내용: ${data.user_text}`);
         console.log(`이미지 소스: ${data.user_image_src}`);
@@ -355,7 +369,7 @@
     }
 
     // 파이어베이스에 데이터 넣어줌
-    async function insertComment() {
+    async function insertComment(id) {
       let nameInput = document.getElementById('nameInput').value.trim();
       let commentInput = document.getElementById('commentInput').value.trim();
 
@@ -377,7 +391,8 @@
         await addDoc(collection(db, "guestBook"), {
           guest_name: nameInput,
           guest_text: commentInput,
-          comment_number: gcmcnt + 1
+          comment_number: gcmcnt + 1,
+          user_id : id
         });
 
         document.getElementById('nameInput').value = "";
@@ -403,13 +418,13 @@
       }
     });
     document.getElementById("col-wj").addEventListener("click", function (event) {
-      console.log(event.currentTarget.id); 
+      getPersonal(event.currentTarget.id);
     });
     document.getElementById("col-sw").addEventListener("click", function (event) {
-      console.log(event.currentTarget.id);
+      getPersonal(event.currentTarget.id);
     });
     document.getElementById("col-es").addEventListener("click", function (event) {
-      console.log(event.currentTarget.id);
+      getPersonal(event.currentTarget.id);
     });
   </script>
   <script src="js/audio.js">
