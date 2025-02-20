@@ -51,10 +51,10 @@
                 <a class="nav-link" href="#cardlist">팀원소개</a>
               </li>
               <li class="nav-item header-nav-item">
-                <a class="nav-link" href="#teamgoal">팀 목표 </a>
+                <a class="nav-link" href="#teamgoal">팀 약속 </a>
               </li>
               <li class="nav-item header-nav-item">
-                <a class="nav-link" href="#teamprom">팀 약속 </a>
+                <a class="nav-link" href="#teamprom">팀 목표 </a>
               </li>
             </ul>
           </div>
@@ -169,7 +169,7 @@
         </div>
       </div>
       <!-- 팀 목표 약속 -->
-      <div id="teamgoal">
+      <div id="teamprom">
         <div class="half">
           <div id="carouselExample" class="carousel slide">
             <div class="carousel-inner">
@@ -342,12 +342,40 @@
 
     // 파이어베이스에 데이터 넣어줌
     async function insertComment() {
-      alert(1);
-      await addDoc(collection(db, "guestBook"), {
-        guest_name: document.getElementById('guestname'),
-        guest_text: document.getElementById('guestcomment'),
-        comment_number: "1"
-      });
+      let nameInput = document.getElementById('nameInput').value.trim();
+      let commentInput = document.getElementById('commentInput').value.trim();
+
+      if (nameInput ===""||commentInput===""){
+        alert("이름과 내용을 입력해주세요!");
+        return;
+      }
+      if(nameInput.length>5){
+        alert("이름은 최대 5자까지 입력 가능합니다.")
+        return;
+      }
+
+      if(commentInput.length>50){
+        alert("방명록은 최대 50자까지 입력 가능합니다.")
+        return;
+      }
+
+      try{
+        await addDoc(collection(db,"guestBook"),{
+            guest_name:nameInput,
+            guest_text:commentInput,
+            comment_number:gcmcnt + 1
+        });
+
+        document.getElementById('nameInput').value="";
+        document.getElementById('commentInput').value="";
+
+        gclist = [];
+        startApp();
+      }catch(error){
+        console.error("방명록 추가 중 오류 발생:",error);
+        alert("방명록을 추가하는 중 오류가 발생했습니다.")
+      }
+
     }
     document.getElementById("button-addon2").addEventListener("click", insertComment);
 
