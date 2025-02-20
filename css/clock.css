@@ -13,15 +13,19 @@ body {
 }
 
 .clock {
-    width: 375px;
-    height: 375px;
-    display: flex;
+    width: 140;
+    height: 140;
+    display: flex
+;
     justify-content: center;
     align-items: center;
     background: url(../img/clock.png);
     background-size: cover;
     border-radius: 50%;
-    position: relative;
+    position: fixed;
+    top: -8px;
+    right: 83px;
+    z-index: 101;
 }
 
 .clock:before {
