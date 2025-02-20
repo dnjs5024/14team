@@ -468,23 +468,28 @@
     });
 
 
-    
 
   </script>
 
-<script>
-  // 모든 네비게이션 링크 가져오기
-  const navLinks = document.querySelectorAll(".nav-link");
-
-  navLinks.forEach(link => {
-    link.addEventListener("click", function() {
-      // 모든 링크에서 active 클래스 제거
-      navLinks.forEach(nav => nav.classList.remove("active"));
-      // 클릭한 링크에만 active 클래스 추가
-      this.classList.add("active");
+  <script>
+    
+    window.addEventListener("resize", () => {
+      const height = window.innerHeight;
+      console.log(`현재 높이: ${height}px`);
     });
-  });
-</script>
+
+    // 모든 네비게이션 링크 가져오기
+    const navLinks = document.querySelectorAll(".nav-link");
+
+    navLinks.forEach(link => {
+      link.addEventListener("click", function () {
+        // 모든 링크에서 active 클래스 제거
+        navLinks.forEach(nav => nav.classList.remove("active"));
+        // 클릭한 링크에만 active 클래스 추가
+        this.classList.add("active");
+      });
+    });
+  </script>
   <script src="js/audio.js">
   </script>
   <script src="js/main.js">
