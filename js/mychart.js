@@ -98,3 +98,16 @@ function closeDetails() {
     chartWrapper.style.transform = "translateX(0)";
     detailsBox.classList.remove("active");
 }
+
+const chart = document.querySelector(".chartmotion");
+const detailBox = document.querySelector(".details");
+
+function positionDetailBox() {
+    const chartRect = chart.getBoundingClientRect();
+    detailBox.style.left = `${600}px`; 
+    detailBox.style.top = `${chartRect.height/3}px`;
+    
+}
+
+positionDetailBox();
+window.addEventListener("resize", positionDetailBox);
