@@ -18,17 +18,17 @@
   }
 
   .swiper-slide-active {
-    transform: scale(1.2); /* 중앙 카드 확대 */
+    transform: scale(1.2);
     filter: none;
   }
 
   .swiper-slide:not(.swiper-slide-active) {
-    filter: brightness(0.5); /* 양옆 카드 흐리게 */
+    filter: brightness(0.5); 
   }
 
   .swiper-button-next::after,
 .swiper-button-prev::after {
-  display: none; /* Swiper 기본 버튼 제거 */
+  display: none; 
 }
 
   .swiper-button-next img, .swiper-button-prev img {

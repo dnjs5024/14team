@@ -1,7 +1,7 @@
 var swiper = new Swiper(".swiper-container", {
-  slidesPerView: 3, /* 한 번에 보이는 카드 개수 */
-  centeredSlides: true, /* 가운데 정렬 */
-  loop: false, /* 무한 루프 */
+  slidesPerView: 3, 
+  centeredSlides: true, 
+  loop: false, 
   navigation: {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev"
