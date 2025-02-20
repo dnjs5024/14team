@@ -2,3 +2,7 @@
 #teamname > img {
     width: 100%;
 }
+
+#teamname{
+    scroll-margin-top: 120px; 
+}

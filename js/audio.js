@@ -1,5 +1,5 @@
 // 영상 넣어주는 부분
-var musicList = ['5SLDIgev8zI', 'UMbPNU_GyTU', 'VXp2dCXYrvQ','gke6crppvBo'];
+var musicList = ['UMbPNU_GyTU','VXp2dCXYrvQ','gke6crppvBo'];
 var music_size = musicList.length;
 var audio_tag = document.createElement('script');
 audio_tag.src = "https://www.youtube.com/iframe_api";
@@ -54,7 +54,8 @@ function previousVideo() {
 }
 
 function getCurrentTitle() {
-    if (player && player.getVideoData) { // player가 정의되어 있는지 확인
+    // player가 정의되어 있는지 확인
+    if (player && player.getVideoData) { 
         let videoData = player.getVideoData();
         return videoData && videoData.title ? videoData.title : "제목을 가져올 수 없음";
     } else {
@@ -70,15 +71,16 @@ function updateTitle() {
 
 function onPlayerStateChange(event) {
     if (event.data === YT.PlayerState.PLAYING) {
-        updateTitle(); // 재생 시작 시 제목 업데이트
+        // 재생 시작 시 제목 업데이트
+        updateTitle(); 
     }
     if (event.data === YT.PlayerState.ENDED) {
         let music_size = musicList.length;
         if (musicNum === music_size - 1) {
-            musicNum = 0; // 초기화
+            // 초기화
+            musicNum = 0; 
             player.playVideoAt(musicNum); 
         }
     }
 }
-// 사용 예시
 
