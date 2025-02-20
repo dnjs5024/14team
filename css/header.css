@@ -1,7 +1,7 @@
 /* header css 부분 */
 #header {  
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     position: fixed;
     width: 100%;
@@ -11,34 +11,39 @@
     top:0;
     background-color: white;
     padding:10px 0;
+    justify-content: center;
    
     
 }
 
 
-#mainlogo {
-    flex : 1 1 auto;
-    
-    
+.container-fluid{
+    width:400;
+}
+
+#spacemaker{
+    width:368px;
 }
 
 #mainlogo > img {
-    height: 50px;
-    width: 100px;
+    height:75px;
+    width: 150px;
     
 }
 
+#headermenu{
+    display: flex;
+}
+
 #headernav {
-    
-    flex : 1 1 auto;
     border-radius: 10px;
     background-color: transparent;
     font-family: "IBM Plex Sans KR", serif;
+    margin-right:32%
 }
 
 .header-nav-item{
 border-radius: 5px;
-margin-left: 20px;
 
 background-color: transparent;
 

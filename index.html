@@ -39,7 +39,11 @@
 <body>
   <!-- header -->
   <div id="header">
-    <!-- 메인로고 -->
+    
+    <!-- 헤더 메뉴 -->
+    <div id="headernav">
+          <!-- 메인로고 -->
+    <div id="headermenu">
     <div id="mainlogo">
       <img src="img/team_logo.png">
     </div>
@@ -68,6 +72,7 @@
       </nav>
     </div>
   </div>
+</div>
   <!-- 시계계 -->
   <div class="clock">
 
@@ -100,10 +105,10 @@
     <div id="contents">
       <!-- 팀명 & 팀소개 -->
       <!---->
-      <script src="js/swiper.js" defer></script>
+      
       <div id="cardlist" class="teamcard  swiper-container row row-cols-1 row-cols-md-3 g-3">
         <div class="swiper-wrapper">
-          <div id="col-wj" class="col swiper-slide">
+          <div id="col-wj" class="col swiper-slide" data-user-id="col-wj">
             <div class="card h-100 mycard card-btn " role="button" data-bs-toggle="collapse" data-bs-target="#nwj">
               <img src="img/wjtop.png" class="card-img-top" alt="...">
               <div class="card-body">
@@ -115,7 +120,7 @@
               </div>
             </div>
           </div>
-          <div id="col-sw" class="col swiper-slide">
+          <div id="col-sw" class="col swiper-slide" data-user-id="col-sw">
             <div class=" card h-100 mycard card-btn " role="button" data-bs-toggle="collapse" data-bs-target="#nwj">
               <img src="img/swtop.png" class="card-img-top" alt="...">
               <div class="card-body">
@@ -125,7 +130,7 @@
               </div>
             </div>
           </div>
-          <div id="col-es" class="col swiper-slide">
+          <div id="col-es" class="col swiper-slide" data-user-id="col-es">
             <div class="card h-100 mycard card-btn " role="button" data-bs-toggle="collapse" data-bs-target="#nwj">
               <img src="img/estop.png" class="card-img-top" alt="...">
               <div class="card-body">
@@ -482,6 +487,7 @@
   </script>
   <script src="js/main.js">
   </script>
+  <script src="js/swiper.js" defer></script>
   <!-- Swiper JS -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 
