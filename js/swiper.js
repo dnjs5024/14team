@@ -26,12 +26,11 @@ var swiper = new Swiper(".swiper-container", {
   },
   on: {
     slideChangeTransitionEnd: function () { 
-      // ✅ 슬라이드 변경 후 '완전히' 끝나고 업데이트해야 함!
       updateCardState();
     }
   }
 });
 
-// ✅ 페이지 로드 시 초기 활성화 카드만 클릭 가능하도록 설정
+
 updateCardState();
 });
