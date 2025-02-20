@@ -1,22 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-
-<body>
-  <div id="player"></div>
-  <button onClick="startVideo()">시작</button>
-  <button onClick="stopVideo()">정지</button>
-
-  <!-- 오디오 플레이어 HTML -->
-
-
-  <script>
-    var tag = document.createElement('script');
+// 영상 넣어주는 부분
+var tag = document.createElement('script');
     tag.src = "https://www.youtube.com/iframe_api";
     var firstScriptTag = document.getElementsByTagName('script')[0];
     firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
@@ -31,19 +14,11 @@
         },
       });
     }
+    // 영상 실행
     function startVideo() {
       player.playVideo();
     }
+    //영상정지지
     function stopVideo() {
       player.stopVideo();
     }
-
-
-
-
-
-
-  </script>
-</body>
-
-</html>
