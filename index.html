@@ -336,6 +336,7 @@
       id.innerHTML = html;
       gcmcnt = cnt;
       pagesize = Math.ceil(gcmcnt / pagecount);
+      pagesize -= 1;
       console.log(pagesize);
       setPageSize();
     }
@@ -436,7 +437,9 @@
           comment_number: gcmcnt + 1,
           user_id : id
         });
-        startApp();
+        document.getElementById('nameInput').value = '';
+        document.getElementById('commentInput').value = '';
+        window.location.reload();
       } catch (error) {
         console.error("방명록 추가 중 오류 발생:", error);
         alert("방명록을 추가하는 중 오류가 발생했습니다.")
