@@ -12,7 +12,7 @@
 }
 .details {
     width: 30vw;
-    background: #f0f0f0;
+    background: rgba(189, 255, 249, 0.486);
     padding: 20px;
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
     display: none;
@@ -21,7 +21,9 @@
     top: 0;
     height: 300px;
     transition: right 0.5s ease-in-out;
+    border-radius: 10px;
 }
+
 .details.active {
     display: block;
 }
