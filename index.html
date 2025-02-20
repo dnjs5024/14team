@@ -72,7 +72,7 @@
       <!-- 팀명 & 팀소개 -->
       <!---->
       <div id="cardlist" class="teamcard row row-cols-1 row-cols-md-3 g-3">
-        <div id="col-1" class="col">
+        <div id="col-wj" class="col">
           <div class="card h-100 mycard card-btn" role="button" data-bs-toggle="collapse" data-bs-target="#nwj">
             <img src="img/wjtop.png"
               class="card-img-top" alt="...">
@@ -85,7 +85,7 @@
             </div>
           </div>
         </div>
-        <div id="col-2" class="col">
+        <div id="col-sw" class="col">
           <div class=" card h-100 mycard card-btn" role="button" data-bs-toggle="collapse" data-bs-target="#nwj">
             <img src="img/swtop.png" class="card-img-top"
               alt="...">
@@ -96,7 +96,7 @@
             </div>
           </div>
         </div>
-        <div id="col-3" class="col">
+        <div id="col-es" class="col">
           <div class="card h-100 mycard card-btn" role="button" data-bs-toggle="collapse" data-bs-target="#nwj">
             <img src="img/estop.png" class="card-img-top"
               alt="...">
@@ -386,6 +386,15 @@
       if (event.target.classList.contains("page-link")) {
         setComment(event.target.text);
       }
+    });
+    document.getElementById("col-wj").addEventListener("click", function (event) {
+      console.log(event.currentTarget.id); 
+    });
+    document.getElementById("col-sw").addEventListener("click", function (event) {
+      console.log(event.currentTarget.id);
+    });
+    document.getElementById("col-es").addEventListener("click", function (event) {
+      console.log(event.currentTarget.id);
     });
   </script>
   <script src="js/audio.js">
