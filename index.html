@@ -39,13 +39,14 @@
 <body>
   <!-- header -->
   <div id="header">
-    <!-- 메인로고 -->
-    <div id="mainlogo">
-      <img src="img/team_logo.png">
-    </div>
     
     <!-- 헤더 메뉴 -->
     <div id="headernav">
+          <!-- 메인로고 -->
+    <div id="headermenu">
+    <div id="mainlogo">
+      <img src="img/team_logo.png">
+    </div>
       <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
           <div class="collapse navbar-collapse" id="navbarNav">
@@ -68,6 +69,7 @@
       </nav>
     </div>
   </div>
+</div>
   <!-- 시계계 -->
   <div class="clock">
 
@@ -319,6 +321,7 @@
       let id = document.getElementById('commentlist');
       let html = '';
       html += '<div class="cmt-list">';
+
       const guestBookSnapshot = await getDocs(collection(db, "guestBook"));
       console.log("[guestBook 데이터 출력]");
       guestBookSnapshot.forEach((doc) => {
