@@ -13,7 +13,7 @@ $(document).ready(function () {
                 let sectionBottom = sectionTop + section.outerHeight();
 
                 if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
-                    $('.nav-link').removeClass('active');  클래스 제거
+                    $('.nav-link').removeClass('active');  
                     $(this).addClass('active'); 
                 }
             }
