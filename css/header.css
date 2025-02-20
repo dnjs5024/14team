@@ -16,6 +16,12 @@
     
 }
 
+.nav-link.active {
+    text-decoration: underline; /* 밑줄 추가 */
+    font-weight: bold; /* 강조 효과 (선택 사항) */
+    color: red; /* 활성화된 링크 색상 변경 (선택 사항) */
+  }
+  
 
 .container-fluid{
     width:400;
