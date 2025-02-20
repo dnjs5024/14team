@@ -132,10 +132,10 @@
                 <div class="user-info">
                   <div class="name-mbti">
                     <p><strong>이름:</strong> <span id="personalname"></span></p>
-                    <p><strong>MBTI:</strong> <span id="personalmbti">INFP</span></p>
+                    <p><strong>MBTI:</strong> <span id="personalmbti"></span></p>
                   </div>
                   <div class="self-intro" id="personaltext">
-                    <p>안녕하세요! 저는 스프링트랙 참여 중인 정승원입니다!</p>
+                    <p></p>
                   </div>
                 </div>
               </div>
@@ -317,14 +317,23 @@
       let user_name = document.getElementById('personalname');
       let user_mbti = document.getElementById('personalmbti');
       let user_img = document.getElementById('personalprofile');
-      let user_html = '';
+      let user_html1 = '';
+      let user_html2 = '';
+      let user_html3 = '';
+      let user_html4 = '';
       const q = query(collection(db, "teamMate"), where("user_id", "==", id));
       const teamMateSnapshot = await getDocs(q);
       console.log("[teamMate데이터 출력]");
       teamMateSnapshot.forEach((doc) => {
         const data = doc.data();
-        user_html += '' + data.user_name;
-        user_name.innerHTML = user_html;
+        user_html1 += '' + data.user_name;
+        user_html2 += '' + data.user_mbti;
+        user_html3 += '' + data.user_text;
+        user_html4 += '' + data.user_image_src;
+        user_name.innerHTML = user_html1;
+        user_mbti.innerHTML = user_html2;
+        user_text.innerHTML = user_html3;
+        user_img.innerHTML = user_html4;
         console.log(`이름: ${data.user_name}, MBTI: ${data.user_mbti}`);
         console.log(`내용: ${data.user_text}`);
         console.log(`이미지 소스: ${data.user_image_src}`);
