@@ -339,7 +339,6 @@
       commentid.innerHTML = html;
       gcmcnt = cnt;
       pagesize = Math.ceil(gcmcnt / pagecount);
-      pagesize -= 1;
       console.log(pagesize);
       setPageSize();
     }
@@ -402,11 +401,10 @@
       } else {
         let id = document.getElementById('commentlist');
         let html = '';
-        let startnum = (pagecount * (pagenum - 1)) + 1;
+        let startnum = (pagecount * (pagenum - 1));
         let endnum = pagecount * (pagenum);
         html += '<div class="cmt-list">';
-        console.log(html);
-        for (var i = startnum; i <= endnum; i++) {
+        for (var i = startnum; i < endnum; i++) {
           console.log(i);
           if (gclist[i] != null) {
             let data = gclist[i];
@@ -447,7 +445,7 @@
         });
         document.getElementById('nameInput').value = '';
         document.getElementById('commentInput').value = '';
-        // window.location.reload();
+         window.location.reload();
       } catch (error) {
         console.error("방명록 추가 중 오류 발생:", error);
         alert("방명록을 추가하는 중 오류가 발생했습니다.")
