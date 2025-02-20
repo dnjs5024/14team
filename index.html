@@ -16,7 +16,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
     integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
     crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="CSS/clock.css">
+  <link rel="stylesheet" href="CSS/clock.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
@@ -30,7 +30,7 @@
   <link href="css/mychart.css" rel="stylesheet" type="text/css">
   <link href="css/swiper.css" rel="stylesheet" type="text/css">
   <link href="css/audio.css" rel="stylesheet" type="text/css">
-  <link href="css/clock.css" rel="stylesheet" type="text/css" >
+  <link href="css/clock.css" rel="stylesheet" type="text/css">
 </head>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=East+Sea+Dokdo&family=Gowun+Dodum&family=IBM+Plex+Sans+KR&family=Kumar+One&family=Shadows+Into+Light&family=Sunflower:wght@300&display=swap');
@@ -43,7 +43,7 @@
     <div id="mainlogo">
       <img src="img/team_logo.png">
     </div>
-    
+
     <!-- 헤더 메뉴 -->
     <div id="headernav">
       <nav class="navbar navbar-expand-lg">
@@ -72,24 +72,24 @@
   <div class="clock">
 
     <div class="hour">
-        <div class="hr" id="hr">
-            
-        </div>
+      <div class="hr" id="hr">
+
+      </div>
     </div>
 
     <div class="min">
-        <div class="mn" id="mn">
+      <div class="mn" id="mn">
 
-        </div>
+      </div>
     </div>
 
     <div class="sec">
-        <div class="sc" id="sc">
+      <div class="sc" id="sc">
 
-        </div>
+      </div>
     </div>
 
-</div>
+  </div>
   <script src="jS/clock.js"></script>
   <!-- 모든 컨텐츠  -->
   <div id="container">
@@ -139,9 +139,9 @@
         <div class="swiper-button-prev">
           <img src="img/chillprev.png">
         </div>
-    <div class="swiper-button-next">
-      <img src="img/chillnext.png">
-    </div>
+        <div class="swiper-button-next">
+          <img src="img/chillnext.png">
+        </div>
       </div>
 
       <div class="collapse-section">
@@ -176,7 +176,7 @@
                     <input type="text" class="form-control" id="commentInput" placeholder="내용을 입력해주세요.">
                   </div>
                   <div class>
-                    <button class="btn btn-outline-secondary" type="button" id="button-addon2"></button>
+                    <button type="button" id="button-addon2"></button>
                   </div>
                 </div>
 
@@ -251,15 +251,15 @@
   <div id="audio">
     <img src="img/chillbody.png">
     <div id="player"></div>
-      <div id="songTitle"></div>
-      <div>
-        <button onClick="previousVideo()"><img class="audio-img" src="img/prev.png"></button>
-        <button onClick="pauseVideo()"><img class="audio-img" src="img/pause.png"></button>
-        <button onClick="startVideo()"><img class="audio-img" src="img/play.png"></button>
-        <button onClick="stopVideo()"><img class="audio-img" src="img/stop.png"></button>
-        <button onClick="nextVideo()"><img class="audio-img" src="img/next.png"></button>
-      </div>
+    <div id="songTitle"></div>
+    <div>
+      <button onClick="previousVideo()"><img class="audio-img" src="img/prev.png"></button>
+      <button onClick="pauseVideo()"><img class="audio-img" src="img/pause.png"></button>
+      <button onClick="startVideo()"><img class="audio-img" src="img/play.png"></button>
+      <button onClick="stopVideo()"><img class="audio-img" src="img/stop.png"></button>
+      <button onClick="nextVideo()"><img class="audio-img" src="img/next.png"></button>
     </div>
+  </div>
   </div>
 
 
@@ -287,12 +287,12 @@
   <script type="module">
 
 
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";
-        import { getFirestore } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
-        import { collection, addDoc } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
-        import { getDocs } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
-        import { updateDoc, deleteDoc, doc } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
-        import { query, where } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";
+    import { getFirestore } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
+    import { collection, addDoc } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
+    import { getDocs } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
+    import { updateDoc, deleteDoc, doc } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
+    import { query, orderBy, where, limit } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
 
     var gcmcnt = 0;
     var pagenum = 0;
@@ -314,26 +314,28 @@
     const app = initializeApp(firebaseConfig);
     const db = getFirestore(app);
     //방명록 가져옴옴
-    async function startApp() {
+    async function getBook(id) {
       let cnt = 0;
-      let id = document.getElementById('commentlist');
+      console.log('id :' + id);
+      let commentid = document.getElementById('commentlist');
       let html = '';
       html += '<div class="cmt-list">';
-      const guestBookSnapshot = await getDocs(collection(db, "guestBook"));
-      console.log("[guestBook 데이터 출력]");
+      const q = query(collection(db, "guestBook"), where("user_id", "==", id), orderBy("comment_number"));
+      console.log(q);
+      const guestBookSnapshot = await getDocs(q);
       guestBookSnapshot.forEach((doc) => {
         const data = doc.data();
         gclist.push(data);
         let name = data.guest_name;
         let text = data.guest_text;
+        let guestbooknum = data.comment_number;
         if (cnt < pagecount) {
-          html += '<div class="cmt-col"><span>' + name + '</span><span>' + text + '</span></div>';
+          html += '<div class="cmt-col"><span>' + guestbooknum + '</span> <span>' + name + '</span><span>' + text + '</span></div>';
         }
         cnt++;
-        console.log(`이름: ${data.guest_name}, 메시지: ${data.guest_text}, 번호:${data.comment_number}`);
       });
       html += "</div>";
-      id.innerHTML = html;
+      commentid.innerHTML = html;
       gcmcnt = cnt;
       pagesize = Math.ceil(gcmcnt / pagecount);
       pagesize -= 1;
@@ -341,7 +343,9 @@
       setPageSize();
     }
     //개인상세페이지 데이터 주입
-    async function getPersonal(id){
+    async function getPersonal(id) {
+      // 방명록 가져오기
+      getBook(id);
       // 개인상세페이지 데이터 가져옴
       let user_text = document.getElementById('personaltext');
       let user_name = document.getElementById('personalname');
@@ -362,7 +366,7 @@
         user_html2 += '' + data.user_mbti;
         user_html3 += '' + data.user_text;
         user_html4 += '' + data.user_image_src;
-        btn_html += '<span class="'+ id +'">등록</span>';
+        btn_html += '<span class="' + id + '">등록</span>';
         user_name.innerHTML = user_html1;
         user_mbti.innerHTML = user_html2;
         user_text.innerHTML = user_html3;
@@ -376,12 +380,15 @@
     function setPageSize() {
       let html = '';
       let id = document.getElementById('pagenav');
-      html += '<ul class="pagination"><li id="pgNum" class="page-item"> <a class="page-link"  aria-label="Previous"><<</a></li>';
-      for (var i = 1; i < pagesize + 1; i++) {
-        html += '<li id="pgNum" class="page-item"><a class="page-link" >' + i + '</a></li>';
+      console.log(gcmcnt);
+      if (gcmcnt != 0) {
+        html += '<ul class="pagination"><li id="pgNum" class="page-item"> <a class="page-link"  aria-label="Previous"><<</a></li>';
+        for (var i = 1; i < pagesize + 1; i++) {
+          html += '<li id="pgNum" class="page-item"><a class="page-link" >' + i + '</a></li>';
+        }
+        html += '<li id="pgNum" class="page-item"><a class="page-link"  aria-label="Next">>></a></li>';
+        html += '</ul>';
       }
-      html += '<li id="pgNum" class="page-item"><a class="page-link"  aria-label="Next">>></a></li>';
-      html += '</ul>';
       id.innerHTML = html;
     }
 
@@ -435,20 +442,18 @@
           guest_name: nameInput,
           guest_text: commentInput,
           comment_number: gcmcnt + 1,
-          user_id : id
+          user_id: id
         });
         document.getElementById('nameInput').value = '';
         document.getElementById('commentInput').value = '';
-        window.location.reload();
+        // window.location.reload();
       } catch (error) {
         console.error("방명록 추가 중 오류 발생:", error);
         alert("방명록을 추가하는 중 오류가 발생했습니다.")
       }
-
     }
-   
-    // 페이지 로드 시 함수 실행
-    window.addEventListener('load', startApp);
+
+
 
     document.getElementById("pagenav").addEventListener("click", function (event) {
       if (event.target.classList.contains("page-link")) {
@@ -465,9 +470,9 @@
       getPersonal(event.currentTarget.id);
     });
     // 데이터 등록 버튼
-    document.getElementById("button-addon2").addEventListener("click",function (event) {
-        console.log('col-wj id :' + event.target.classList[0]);
-        insertComment(event.target.classList[0]);
+    document.getElementById("button-addon2").addEventListener("click", function (event) {
+      console.log('col-wj id :' + event.target);
+      insertComment(event.target.classList[0]);
     });
 
 
@@ -478,7 +483,7 @@
   <script src="js/main.js">
   </script>
   <!-- Swiper JS -->
-<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 
 </body>
 
