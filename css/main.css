@@ -13,3 +13,7 @@ background-color: E1ECBF;
     margin-left: 25%;
     margin-right: 25%;
 }
+
+.cmt-col span {
+    display: inline-block;
+    padding-right: 15px; }
