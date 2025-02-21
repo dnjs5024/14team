@@ -1,28 +1,30 @@
 $(document).ready(function () {
-    
     function highlightMenu() {
-        let scrollPosition = $(window).scrollTop();
+        let scrollHeight = $(window).scrollTop();
+        let contentHeight = $(document).height(); 
+        let allLinks = $('.nav-link');
 
         
-        $('.nav-link').each(function () {
-            let sectionId = $(this).attr('href');
-            let section = $(sectionId);
-            
-            if (section.length) {
-                let sectionTop = section.offset().top - 100; 
-                let sectionBottom = sectionTop + section.outerHeight();
+    
 
-                if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
-                    $('.nav-link').removeClass('active');  
-                    $(this).addClass('active'); 
-                }
-            }
-        });
+        let currentPosition = scrollHeight / contentHeight; 
+
+        allLinks.removeClass('active');
+
+        if (currentPosition <= 0.18) {
+            $('.nav-link1').addClass('active'); 
+        } else if (currentPosition > 0.18 && currentPosition <= 0.4) {
+            $('.nav-link2').addClass('active'); 
+        } else if (currentPosition > 0.4 && currentPosition <= 0.68) {
+            $('.nav-link3').addClass('active'); 
+        } else if (currentPosition > 0.68) {
+            $('.nav-link4').addClass('active'); 
+        }
+
+        console.log(`현재 스크롤 비율: ${(currentPosition * 100).toFixed(2)}%`);
+        console.log(`문서 전체 높이: ${contentHeight}px`);
     }
 
-    
     $(window).on('scroll', highlightMenu);
-
-    
-    highlightMenu();
+    $(window).trigger('scroll'); 
 });
