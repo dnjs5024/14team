@@ -8,6 +8,7 @@ const detailsData = {
     "개발역량": "java 알고리즘 문제 각자 해결하고 미니 스터디 진행\n chat gpt 사용 지양하기"
 };
 
+
 const data = {
     labels: Object.keys(detailsData),
     datasets: [
@@ -111,8 +112,9 @@ function showDetails(label) {
     const detailTitle = document.getElementById("detailTitle");
     const detailContent = document.getElementById("detailContent");
 
-    detailTitle.textContent = label;
-    detailContent.textContent = detailsData[label];
+    detailTitle.textContent = label; // 텍스트만 설정
+    detailTitle.style.fontWeight = "bold";
+    detailContent.innerHTML = detailsData[label].replace(/\n/g, "<br>");
 
     chartWrapper.style.transform = "translateX(-350px)"; 
     detailsBox.style.right = "-80px";  
