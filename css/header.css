@@ -76,7 +76,7 @@ font-size: 1.5rem;
     gap: 8px; /* 아이콘 사이 간격 */
     position: fixed;
     top: 10px;  /* 원하는 위치로 조정 */
-    right: 200px;
+    right: 230px;
     z-index: 101;
 }
 
