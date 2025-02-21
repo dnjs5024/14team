@@ -159,8 +159,10 @@
                     <p><strong>이름:</strong> <span id="personalname"></span></p>
                     <p><strong>MBTI:</strong> <span id="personalmbti"></span></p>
                     <p><strong>나이:</strong> <span id="personalage"></span></p>
+                    <p><strong>취미:</strong> <span id="personalhobby"></span></p>
                     <p><strong>좋아하는 영화:</strong> <span id="personalmovie"></span></p>
                     <p><strong>좋아하는 음악:</strong> <span id="personalsong"></span></p>
+                    
                   </div>
                   <div class="self-intro" id="personaltext">
                     <p></p>
@@ -351,6 +353,7 @@
       let user_name = document.getElementById('personalname');
       let user_mbti = document.getElementById('personalmbti');
       let user_age = document.getElementById('personalage');
+      let user_hobby = document.getElementById('personalhobby');
       let user_movie = document.getElementById('personalmovie');
       let user_song = document.getElementById('personalsong');
       let user_img = document.getElementById('personalprofile');
@@ -362,6 +365,7 @@
       let user_html5 = '';
       let user_html6 = '';
       let user_html7 = '';
+      let user_html8 = '';
       let btn_html = '';
       const q = query(collection(db, "teamMate"), where("user_id", "==", id));
       const teamMateSnapshot = await getDocs(q);
@@ -375,6 +379,7 @@
         user_html5 += '' + data.user_age;
         user_html6 += '' + data.user_movie;
         user_html7 += '' + data.user_song;
+        user_html8 += '' + data.user_song;
         btn_html += '<img class="' + id + '" src="img/uploadbtn.png" alt="등록">';
         user_name.innerHTML = user_html1;
         user_mbti.innerHTML = user_html2;
@@ -384,6 +389,7 @@
         user_age.innerHTML = user_html5;
         user_movie.innerHTML = user_html6;
         user_song.innerHTML = user_html7;
+        user_hobby.innerHTML = user_html8;
 
         console.log(`이름: ${data.user_name}, MBTI: ${data.user_mbti}`);
         console.log(`내용: ${data.user_text}`);
